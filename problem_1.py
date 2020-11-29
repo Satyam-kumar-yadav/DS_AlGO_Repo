@@ -256,5 +256,73 @@
 
 # Problem - Line Number 35
 # Problem - Line Number 36
-# Problem - Line number 37
+
+# Problem - Line number
+# NA
+
+
 # Problem - Line Number 38
+# def minSwap(arr , n , k):
+#     a = [0]*n
+#     count = 0
+#     for i in range(n):
+#         if arr[i] <= k:
+#             a[i] = 1
+#             count += 1
+#     if count == 1:
+#         return 0
+#     max_res = count
+#     for i in range(n - count + 1):
+#         res = 0
+#         for j in range(i , i + count):
+#             if a[j] == 0:
+#                 res += 1
+#         if max_res > res:
+#             max_res = res
+#         print(res)
+#     return max_res
+
+# #a = [470 , 10 , 28 , 338 , 384 , 0 , 329 , 405 , 70 , 349 , 40  , 472 , 212 , 14,  411 , 151  ,215 , 384 ,368 ,46 ,256 ,  42]
+# #a  = [263, 349, 318, 277, 282, 301, 250, 104, 164, 278, 442, 400, 130, 271, 305, 52, 472, 346, 24, 185]
+# #a = [2, 1, 5, 6, 3]
+# #a = [497, 444, 294, 120]
+# a = [310, 229, 86, 249]
+# print(minSwap(a , len(a) , 256))
+
+# Problem -  Line Number 39
+# def PalinArray(arr ,n):
+#     # Code here
+#     for i in range(n):
+#         if checkPalindrom(arr[i]):
+#             continue
+#         else:
+#             return 0
+#     return 1
+# def checkPalindrom(num):
+#     temp = num
+#     rev = 0
+#     while(num>0):
+#         dig=num%10
+#         rev=rev*10+dig
+#         num=num//10
+#     if temp == rev:
+#         return True
+#     return False
+
+# a = [111 , 222, 333, 444, 555]
+# print(PalinArray(a , len(a)))
+
+# Problem - Line Number 40
+# public int find_fact(int[] v)
+# {
+#     // Code here
+#     int n = v.length ;
+#     Arrays.sort(v) ;
+#     if( n % 2 != 0){
+#         return v[n / 2] ;
+#     }else{
+#         return (v[n / 2 - 1] + v[n / 2]) / 2 ;
+#     }
+# }
+
+# Problem - Line Number 44
