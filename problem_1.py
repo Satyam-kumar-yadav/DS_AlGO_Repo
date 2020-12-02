@@ -326,3 +326,82 @@
 # }
 
 # Problem - Line Number 44
+##### Problem - Line Number 56
+# class Solution:
+#     def reverseString(self, s: List[str]) -> None:
+#         """
+#         Do not return anything, modify s in-place instead.
+        
+#         """
+#         n = len(s) // 2
+#         for i in range(n):
+#             temp = s[len(s) - i - 1]
+#             s[len(s) - i - 1] = s[i]
+#             s[i] = temp
+##### Problem - Line Number 57
+# class Solution:
+# 	def isPlaindrome(self, S):
+# 	    if S == S[::-1]:
+# 	        return 1
+# 	    return 0
+##### Problem - Line Number 58
+def reverseString(string , count):
+    for i in string:
+        count[ord(i)] += 1
+    return count
+def filln(string):
+    count = [0]*256
+    count = reverseString(string , count)
+    k = 0
+    for i in count:
+        if int(i) > 1:
+            print(chr(k) , int(i))
+        k += 1
+
+
+string = "test string"
+filln(string)
+
+
+######## Problem - Line Number 101
+# def occurnce(arr , n , m):
+#     arr1 = list()
+#     if m not in arr:
+#         print("-1")
+#     else:
+#         for i in range(n):
+#             if arr[i] == m:
+#                 arr1.append(i)
+#         print(arr1[0] , arr1[-1])        
+
+# # a = [1, 3, 5, 5, 5, 5, 7, 123, 125 , 5]
+# a = [1, 2, 2, 2, 2, 3, 4, 7, 8, 8]
+# occurnce(a , len(a) , 8)
+#### Problem - Line Number 102
+# class Solution:
+
+# 	def valueEqualToIndex(self,arr, n):
+# 		# code here
+# 		arr1 = list()
+# 	    for i in range(n+1):
+# 		    if i == arr[i -1]:
+# 		        arr1.append(arr[i-1])
+# 	    return arr1      
+
+# #### Problem - Line Number 103
+# class Solution:
+#     def search(self, nums: List[int], target: int) -> int:
+#         for i in range(len(nums)):
+#             if nums[i] == target:
+#                 return i
+            
+#         return -1   
+
+#### Problem - Line Number 104
+# class Solution:
+#     def countSquares(self, N):
+#         # code here 
+#         return int(math.sqrt(N -1))
+
+# #### Problem - Line Number 104   
+     
