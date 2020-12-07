@@ -420,6 +420,53 @@
 # n = len(str) 
 # print(permute(str, n)) 
 ##### Problem - Line Number 70
+# def nextpermutation(arr , n):
+#     for i in range(n -1 , 0 , -1):
+#         if arr[i -1 ] < arr[i]:
+#             break
+
+#     if i == 1 and arr[i] <= arr[i-1]: 
+
+
+
+#             temp = arr[i -1]
+#             min = i
+#             for j in range(i , n):
+#                 if arr[j] < arr[min]:
+#                     min = j
+
+#             arr[min] , temp = temp , arr[min]
+
+########incomplete
+######## Problem - Line Number 71
+# def ispar(expr): 
+# 	stack = [] 
+# 	for char in expr: 
+# 		if char in ["(", "{", "["]:  
+# 			stack.append(char) 
+# 		else: 
+# 			if not stack: 
+# 				return False
+# 			current_char = stack.pop() 
+# 			if current_char == '(': 
+# 				if char != ")": 
+# 					return False
+# 			if current_char == '{': 
+# 				if char != "}": 
+# 					return False
+# 			if current_char == '[': 
+# 				if char != "]": 
+# 					return False
+
+# 	if stack: 
+# 		return False
+# 	return True
+# s = "{([])}"
+# if ispar(s):
+#     print("true")
+# else:
+#     print("false")
+######## Problem - Line Number 72
 
 
 
