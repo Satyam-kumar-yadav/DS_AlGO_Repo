@@ -345,22 +345,82 @@
 # 	        return 1
 # 	    return 0
 ##### Problem - Line Number 58
-def reverseString(string , count):
-    for i in string:
-        count[ord(i)] += 1
-    return count
-def filln(string):
-    count = [0]*256
-    count = reverseString(string , count)
-    k = 0
-    for i in count:
-        if int(i) > 1:
-            print(chr(k) , int(i))
-        k += 1
+# def reverseString(string , count):
+#     for i in string:
+#         count[ord(i)] += 1
+#     return count
+# def filln(string):
+#     count = [0]*256
+#     count = reverseString(string , count)
+#     k = 0
+#     for i in count:
+#         if int(i) > 1:
+#             print(chr(k) , int(i))
+#         k += 1
 
 
-string = "test string"
-filln(string)
+# string = "test string"
+# filln(string)
+# ##### Problem - Line Number 59
+# Why String are immutable
+##### Problem - Line Number 60
+# def stingcheck(s1 , s2):
+#     temp = s1 + s1
+#     if s2 in temp:
+#         return 1
+#     else:
+#         return 0
+
+# s1 = "ABCD"
+# s2 = "CDAB"
+# print(stingcheck(s1 , s2))
+##### Problem - Line Number 61
+# def string_count(a1 , a2 , String):
+#     i , j , k = 0 , 0 , 0
+#     while k != len(String):
+#         if i < len(a1) and a1[i] == String[k]:
+#             i += 1
+#         elif j < len(a2) and a2[j] == String[k]:
+#             j += 1
+#         else:
+#             return False
+#     return True            
+##### Problem - Line Number 62
+##### Problem - Line Number 66
+# def toString(List): 
+# 	return ''.join(List) 
+
+# def permute(a, l, r): 
+# 	if l==r: 
+# 		print(toString(a))
+# 	else: 
+# 		for i in range(l,r+1): 
+# 			a[l], a[i] = a[i], a[l] 
+# 			permute(a, l+1, r) 
+# 			a[l], a[i] = a[i], a[l]
+##### Problem - Line Number 67
+# def permute(arr , n):
+#     zero= 0
+#     one = 0
+#     cnt = 0
+#     for i in range(len(arr)):
+#         if arr[i] == "1":
+#             one += 1
+#         else:
+#             zero += 1
+        
+#         if one == zero:
+#             cnt += 1
+#     if one != zero:
+#         return -1    
+
+#     return cnt        
+
+# str = "0111100010"
+# n = len(str) 
+# print(permute(str, n)) 
+##### Problem - Line Number 70
+
 
 
 ######## Problem - Line Number 101
@@ -404,4 +464,15 @@ filln(string)
 #         return int(math.sqrt(N -1))
 
 # #### Problem - Line Number 104   
-     
+
+
+
+### Fibonnaci sequence
+# def fib(n):
+#     if n ==1 or n == 2:
+#         return 1
+#     else:
+#         return fib(n -1 ) + fib(n -2)   
+
+# print(fib(50))
+
