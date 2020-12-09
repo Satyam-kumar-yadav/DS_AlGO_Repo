@@ -466,9 +466,90 @@
 #     print("true")
 # else:
 #     print("false")
-######## Problem - Line Number 72
+# ######## Problem - Line Number 72
+# def wordBreak(wordList, word): 
+# 	if word == '': 
+# 		return True
+# 	else: 
+# 		wordLen = len(word) 
+
+# 	return any([(word[:i] in wordList) and wordBreak(wordList, word[i:]) for i in range(1, wordLen+1)]) 
+    
+
+# B = { "i", "like", "sam", "sung", "samsung", "mobile",
+# "ice","cream", "icecream", "man", "go", "mango" }
+# A = "ilikesamsung"
+# print(wordBreak(B , A))
+
+######## Problem - Line Number 73
+# n = len(s)
+# 	for i in range(n //2 , 0 , -1):
+# 		preffix = s[:i]
+# 		suffix = s[n-i : n]
+# 		if preffix == suffix:
+# 			return i
+# 	return 0def lps(s):
+######## Problem - Line Number 75
+# def mobileNum(arr , s):
+# 	output = ""
+# 	for i in s:
+# 		if i == " ":
+# 			output += "0"
+# 		else:
+# 			pos = ord(i) - ord("A")	
+# 			output += arr[pos]
+						
+# 	return output
+
+# str = ["2", "22", "222", 
+#        "3", "33", "333", 
+#        "4", "44", "444", 
+#        "5", "55", "555", 
+#        "6", "66", "666", 
+#        "7", "77", "777", "7777", 
+#        "8", "88", "888", 
+#        "9", "99", "999", "9999" ] 
+  
+# input1 = "GEEKSFORGEEKS"
+# print(mobileNum(str, input1)) 
+# ######## Problem - Line Number 76
+# def balancedString(S):
+# 	arr1 = list()			
+# 	for i in S:
+# 		if (len(arr1) == 0 and  i == "}") or i == "{":
+# 			arr1.append(i)
+# 		else:
+# 			count = arr1.pop()
+# 			if i == "}" and count == "{" :
+# 				continue
+# 			else:
+# 				arr1.append(count)
+# 				arr1.append(i)
+# 	print (arr1)			
+
+# 	l1 = 0
+# 	l2 = 0 
+# 	count = 0
+# 	for i in arr1:
+# 		if i == "{":
+# 			l1 += 1
+# 		else:
+# 			l2 += 1
+
+# 	if l1 % 2 == 0 and l2 % 2 == 0:
+# 		count = l1 //2 + l2 //2
+# 	elif l1 % 2 != 0 and l2 % 2 != 0:
+# 		count = l1 //2 + l2 // 2 + 2
+# 	else:
+# 		count = -1		
+
+# 	return count
 
 
+# a = "}}}}"
+# print(balancedString(a))
+######## Problem - Line Number 77
+def 
 
 ######## Problem - Line Number 101
 # def occurnce(arr , n , m):
