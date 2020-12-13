@@ -309,23 +309,78 @@
 #         return True
 #     return False
 
-# a = [111 , 222, 333, 444, 555]
-# print(PalinArray(a , len(a)))
+# # a = [111 , 222, 333, 444, 555]
+# # print(PalinArray(a , len(a)))
 
-# Problem - Line Number 40
-# public int find_fact(int[] v)
-# {
-#     // Code here
-#     int n = v.length ;
-#     Arrays.sort(v) ;
-#     if( n % 2 != 0){
-#         return v[n / 2] ;
-#     }else{
-#         return (v[n / 2 - 1] + v[n / 2]) / 2 ;
-#     }
-# }
+# # Problem - Line Number 40
+# # public int find_fact(int[] v)
+# # {
+# #     // Code here
+# #     int n = v.length ;
+# #     Arrays.sort(v) ;
+# #     if( n % 2 != 0){
+# #         return v[n / 2] ;
+# #     }else{
+# #         return (v[n / 2 - 1] + v[n / 2]) / 2 ;
+# #     }
+# # }
 
-# Problem - Line Number 44
+# # Problem - Line Number 44
+# def spiralmat(row , col , a):
+#     k  = 0
+#     l = 0
+#     while(k < row and l < col ):
+#         for i in range(l  , col):
+#             print(a[k][i] , end = " ")
+#         k += 1
+
+#         for i in range( k , row):
+#             print(a[i][col - 1] , end = " ")
+#         col -= 1    
+#         if k < m:
+#             for i in range(col - 1 , l -1 , -1):
+#                 print(a[row - 1][i] , end= " ")
+#             row -= 1
+#             for i in range(row - 1 , k , -1 ):
+#                 print(a[i][l] , end = " ")
+#           l += 1    
+
+# a = [[1, 2, 3, 4, 5, 6],
+#      [7, 8, 9, 10, 11, 12],
+#      [13, 14, 15, 16, 17, 18]]
+
+# R = 3
+# C = 6
+
+# # Function Call
+# spiralmat(R, C, a)
+##### Problem - Line Number 45
+def binarysearch(arr , r , l , m):
+    if l >= r:
+        mid= r + (l - r)//2
+        if arr[mid] == m:
+            return True
+        elif m < arr[mid] :
+            return binarysearch(arr , r , mid - 1 , m)   
+        else:
+            return binarysearch(arr , mid + 1 , l , m)
+    else:
+        return False            
+def mat(matrix , r , l , m):    
+    for i in range(r):
+        if m > matrix[i][0] and m < matrix[i][l - 1] :
+             return binarysearch(matrix[i] , 0 , l - 1, m)
+                    
+        else:
+            return False
+# m = [1 , 3 , 5 , 7 , 6]
+# print(binarysearch(m , 0 , len(m) - 1, 8))    
+
+matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,50]] 
+target = 3
+print(mat(matrix , 3 , 4 , target))
+
+
 ##### Problem - Line Number 56
 # class Solution:
 #     def reverseString(self, s: List[str]) -> None:
@@ -338,7 +393,7 @@
 #             temp = s[len(s) - i - 1]
 #             s[len(s) - i - 1] = s[i]
 #             s[i] = temp
-##### Problem - Line Number 57
+##### Prloblem - Line Number 57
 # class Solution:
 # 	def isPlaindrome(self, S):
 # 	    if S == S[::-1]:
@@ -549,6 +604,14 @@
 # a = "}}}}"
 # print(balancedString(a))
 ######## Problem - Line Number 77
+######## Problem - Line Number 78
+# def num(arr , s):
+#     list(s)
+#     for i in range(len(arr)):
+#         for j in range(len(i)):
+
+
+
 
 ######## Problem - Line Number 101
 # def occurnce(arr , n , m):
