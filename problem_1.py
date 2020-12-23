@@ -677,67 +677,134 @@
 # from collections import Counter
 # def max(A , N):
 #     n = N // 2
-#     dt = Counter(A)
-#     for i in dt:
-#         if dt[i] > n:
-#             return i
-#     return -1    
+# #     dt = Counter(A)
+# #     for i in dt:
+# #         if dt[i] > n:
+# #             return i
+# #     return -1    
 
-# A = [1 , 2 , 3]    
-# N = 3
-##### problem Number - 108
-# def pairdiff(arr , n , m):
-#     x = set()
-#     for i in arr:
-#         x.add(i)
-#     for i in arr:
-#         if i + m in x:
-#             return 1
-#     return -1        
+# # A = [1 , 2 , 3]    
+# # N = 3
+# ##### problem Number - 108
+# # def pairdiff(arr , n , m):
+# #     x = set()
+# #     for i in arr:
+# #         x.add(i)
+# #     for i in arr:
+# #         if i + m in x:
+# #             return 1
+# #     return -1        
         
-# t = int(input())
-# for _ in range(t):
-#     n,k=map(int,input().strip().split())
+# # t = int(input())
+# # for _ in range(t):
+# #     n,k=map(int,input().strip().split())
 
-#     arr = list(map(int,input().strip().split()))
-#     print(pairdiff(arr , n , k))
-### problem Number - 109
+# #     arr = list(map(int,input().strip().split()))
+# #     print(pairdiff(arr , n , k))
+# ### problem Number - 109
+# # def fourSum(arr , k):
+# #     x = set()
+# #     arr1 =[]
+# #     for i in arr:
+# #         x.add(i)
+
+# #     for i in range(len(arr) - 2):
+# #         for j in range(i + 1 , len(arr) -1 ):
+# #             for k1 in range( j + 1 , len(arr)):
+# #                 if  k - (arr[i] + arr[j] + arr[k1]) in x:
+# #                     arr1.append([arr[i] , arr[j] , arr[k1] , k - (arr[i] + arr[j] + arr[k1]) ])
+
+# #     return arr1
+
+# # A = [0,0,2,1,1]
+# # print(fourSum(A , 3))
+# # print(max(A , 5))
+
+# ### problem Number 110
 # def fourSum(arr , k):
-#     x = set()
-#     arr1 =[]
-#     for i in arr:
-#         x.add(i)
+#     arr1 = []
+#     arr.sort()
+#     for i in range(len(arr) - 3):
+#         for j in range( i + 1 , len(arr) - 2):
+#             l = j + 1
+#             r = len(arr) -1
+#             while l < r:
+#                 if arr[i] + arr[j] + arr[l] + arr[r] == k:
+#                     arr1.append([arr[i] , arr[j] , arr[l] , arr[r]])
+#                     l += 1
+#                     r -= 1
+#                 elif arr[i] + arr[j] + arr[l] + arr[r] < k:
+#                     l += 1    
+#                 else:
+#                     r -= 1  
 
-#     for i in range(len(arr) - 2):
-#         for j in range(i + 1 , len(arr) -1 ):
-#             for k1 in range( j + 1 , len(arr)):
-#                 if  k - (arr[i] + arr[j] + arr[k1]) in x:
-#                     arr1.append([arr[i] , arr[j] , arr[k1] , k - (arr[i] + arr[j] + arr[k1]) ])
+#     return arr1                               
+# A = [10,2,3,4,5,7,8]
+# print(fourSum(A ,23))
+### Problem Number - 111
+# # def find_max_sum(arr): 
+# 	# incl = 0
+# 	# excl = 0
+	
+# 	# for i in arr: 
+		
+# 	# 	# Current max excluding i (No ternary in 
+# 	# 	# Python) 
+# 	# 	new_excl = excl if excl>incl else incl 
+		
+# 	# 	# Current max including i 
+# 	# 	incl = excl + i 
+# 	# 	excl = new_excl 
+	
+# 	# # return max of incl and excl 
+# 	# return (excl if excl>incl else incl) 
 
-#     return arr1
+# # Driver program to test above function 
+# # arr = [5, 5, 10, 100, 10, 5] 
+# # print(find_max_sum(arr) )
+# ########## Problem Number 113
+# def countTriplets(arr, n, sum):
+#     # Your code goes here
+#     triplet = 0
+#     for i in range(n-2):
+#         l = i + 1
+#         r = n - 1
+#         while l < r:
+#             if arr[i] + arr[l] + arr[r] >= sum:
+#                 r -= 1
+#             else:
+#                 triplet += r - l
+#                 l += 1
+#     return triplet
 
-# A = [0,0,2,1,1]
-# print(fourSum(A , 3))
-# print(max(A , 5))
+# arr = [5, 1, 3, 4, 7]
+# print(countTriplets(arr , 5 , 12))
+######### Problem Number 114
+def merge(arr1, arr2, n, m): 
+    # code here
+    arr= []
+    i = 0 
+    j = 0
+    while i < n and j < m:
+        if arr1[i] < arr2[j]:
+            arr.append(arr1[i])
+            i += 1
+        else:
+            arr.append(arr2[j])    
+            j += 1
 
-### problem Number 110
-def fourSum(arr , k):
-    arr1 = []
-    arr.sort()
-    for i in range(len(arr) - 3):
-        for j in range( i + 1 , len(arr) - 2):
-            l = j + 1
-            r = len(arr) -1
-            while l < r:
-                if arr[i] + arr[j] + arr[l] + arr[r] == k:
-                    arr1.append(1)
-                elif arr[i] + arr[j] + arr[l] + arr[r] < k:
-                    l += 1    
-                elif arr[i] + arr[j] + arr[l] + arr[r] < k:
-                    r -= 1 
-    return arr1                
-A = [0,0,2,1,1]
-print(fourSum(A , 3))
+    while i < n:
+        arr.append(arr1[i])
+        i += 1
+    while j < m:
+        arr.append(arr2[j])
+        j += 1                
+            
+    return arr
+
+arr1 = [10, 12]    
+arr2 = [5, 18, 20]
+print(merge(arr1 , arr2 , 2 , 3))
 # # # ### Fibonnaci sequence
 # # # # def fib(n):
 # # # #     if n ==1 or n == 2:
