@@ -748,63 +748,222 @@
 	
 # 	# for i in arr: 
 		
-# 	# 	# Current max excluding i (No ternary in 
-# 	# 	# Python) 
-# 	# 	new_excl = excl if excl>incl else incl 
+# # 	# 	# Current max excluding i (No ternary in 
+# # 	# 	# Python) 
+# # 	# 	new_excl = excl if excl>incl else incl 
 		
-# 	# 	# Current max including i 
-# 	# 	incl = excl + i 
-# 	# 	excl = new_excl 
+# # 	# 	# Current max including i 
+# # 	# 	incl = excl + i 
+# # 	# 	excl = new_excl 
 	
-# 	# # return max of incl and excl 
-# 	# return (excl if excl>incl else incl) 
+# # 	# # return max of incl and excl 
+# # 	# return (excl if excl>incl else incl) 
 
-# # Driver program to test above function 
-# # arr = [5, 5, 10, 100, 10, 5] 
-# # print(find_max_sum(arr) )
-# ########## Problem Number 113
-# def countTriplets(arr, n, sum):
-#     # Your code goes here
-#     triplet = 0
-#     for i in range(n-2):
-#         l = i + 1
-#         r = n - 1
-#         while l < r:
-#             if arr[i] + arr[l] + arr[r] >= sum:
-#                 r -= 1
-#             else:
-#                 triplet += r - l
-#                 l += 1
-#     return triplet
+# # # Driver program to test above function 
+# # # arr = [5, 5, 10, 100, 10, 5] 
+# # # print(find_max_sum(arr) )
+# # ########## Problem Number 113
+# # def countTriplets(arr, n, sum):
+# #     # Your code goes here
+# #     triplet = 0
+# #     for i in range(n-2):
+# #         l = i + 1
+# #         r = n - 1
+# #         while l < r:
+# #             if arr[i] + arr[l] + arr[r] >= sum:
+# #                 r -= 1
+# #             else:
+# #                 triplet += r - l
+# #                 l += 1
+# #     return triplet
 
-# arr = [5, 1, 3, 4, 7]
-# print(countTriplets(arr , 5 , 12))
-######### Problem Number 114
-def merge(arr1, arr2, n, m): 
-    # code here
-    arr= []
-    i = 0 
-    j = 0
-    while i < n and j < m:
-        if arr1[i] < arr2[j]:
-            arr.append(arr1[i])
-            i += 1
-        else:
-            arr.append(arr2[j])    
-            j += 1
+# # arr = [5, 1, 3, 4, 7]
+# # print(countTriplets(arr , 5 , 12))
+# ######### Problem Number 114
+# with(space)
+# def merge(arr1, arr2, n, m): 
+#     # code here
+#     arr= []
+#     i = 0 
+#     j = 0
+#     while i < n and j < m:
+#         if arr1[i] < arr2[j]:
+#             arr.append(arr1[i])
+#             i += 1
+#         else:
+#             arr.append(arr2[j])    
+# #             j += 1
 
-    while i < n:
-        arr.append(arr1[i])
-        i += 1
-    while j < m:
-        arr.append(arr2[j])
-        j += 1                
+# #     while i < n:
+# #         arr.append(arr1[i])
+# #         i += 1
+# #     while j < m:
+# #         arr.append(arr2[j])
+# #         j += 1                
             
-    return arr
+# #     return arr
 
-arr1 = [10, 12]    
-arr2 = [5, 18, 20]
-print(merge(arr1 , arr2 , 2 , 3))
+# # arr1 = [10, 12]    
+# # arr2 = [5, 18, 20]
+# # print(merge(arr1 , arr2 , 2 , 3))
+# ####without Space
+# # def merge(arr1 , arr2 , n , m):
+# #     for i in range(m - 1 , - 1 , -1):
+# #         last = arr1[n - 1]
+# #         j = n - 2
+# #         while(j >= 0 and arr2[i] < arr1[j]):
+# #             arr1[j + 1] = arr1[j]
+# #             j -= 1
+# #         if  j != n -2 or last > arr2[i]:
+# #             arr1[j + 1] = arr2[i]
+# #             arr2[i] = last        
+
+# # arr1 = [1, 3, 5, 7]
+# # arr2 = [0, 2, 6, 8, 9]
+# # merge(arr1 , arr2 , 4 , 5)
+# # print(arr1 + arr2)
+# ######problem number 115
+# def subarray(arr , n):
+#     count = 0 
+#     sum = 0
+#     old_sum = 0
+#     x = set()
+#     for i in range(n):
+#         x.add(sum) 
+#         old_sum = sum    
+#         sum += arr[i]
+#         if sum in x:
+#             count += 1
+#         if old_sum == sum:
+#             count += 1    
+#     print(x)        
+#     return count        
+# a = [6,-1,-3,4,-2,2,4,6,-12,-7]
+# print(subarray(a , 10))
+#### Problem number 116
+# def prod(arr , n):
+    # left = [0] * n
+    # right = [0] * n
+    # prod1 = [0] * n
+    # left[0] = 1
+    # right[n - 1] = 1
+    # for i in range(1 , n):
+    #     left[i] = arr[i - 1] * left[i -1]
+    # for i in range(n - 2 , -1 , -1):
+    #     right[i]  = arr[i + 1] * right[i + 1]  
+
+    # for i in range(n):
+    #     prod1[i] = left[i] * right[i]
+
+    # return prod1     
+
+### Problem number 117
+# def minSwap(arr , n):
+
+
+
+
+
+
+
+# # a = [10, 3, 5, 6, 2]    
+# # print(minSwap(a , 5))
+# # Problem from codechef
+# # def killMonster(a , b , c):
+# #     sum = a + b + c
+# #     temp = sum // 9
+# #     m = min(a , min(b , c))
+# #     if sum % 9 != 0 or m < temp:
+# #         print("No")
+# #     else:
+# #         print("Yes")     
+
+# # killMonster(10 , 1 , 7)
+# # ### problem Number 119
+# # def bishuSoldiers(arr , n):
+# #     sum = 0
+# #     for i in range(len(arr)):
+# #         if arr[i] <= n:
+# #             sum += arr[i]
+# #     return sum        
+# # a = [1, 2, 3, 4, 5, 6, 7]    
+# # print(bishuSoldiers( a , 10 ))
+# ### Problem Number 120
+# ### Problem Number 122
+# def pivotBinary(arr , l , r ,k):
+#     pi = findPivot(arr , l , r)
+#     if pi == -1:
+#         return binarysearch(arr , l , r ,k)
+        
+#     if arr[pi] == k:
+#         return pi
+#     if arr[0] <= k:
+#         return binarysearch(arr , l , pi - 1 , k)
+#     return binarysearch(arr , pi + 1 , r , k)    
+
+
+# def findPivot(arr , l , r):
+#     if l > r:
+#         return -1
+#     if l == r:
+#         return l
+#     mid =  l + (r -l) // 2
+#     if mid < r and arr[mid]  > arr[mid + 1] :
+#         return mid
+#     if mid > l and arr[mid] < arr[mid - 1] :
+#         return (mid -1)
+# #     if arr[l] >= arr[mid] :
+# #         return findPivot(arr , l , mid - 1)
+# #     return findPivot(arr , mid + 1 , r)
+
+
+
+# # def binarysearch(arr ,l  ,r , k):
+# #     if l <= r:
+# #         mid = l + (r- l) // 2
+# #         if arr[mid] == k:
+# #             return mid
+# #         elif arr[mid] < k:
+# #             return binarysearch(arr , mid + 1 , r , k)   
+# #         else:
+# #             return binarysearch(arr , l , mid - 1 , k)
+# # a = [5, 6, 7, 8, 9, 10, 1, 2, 3]
+# # print(pivotBinary(a , 0 , len(a) - 1 , 3))
+# ### Problem Number 123
+# def kthElement(arr1 , arr2 , n , m , k):
+#     i , j = 0 , 0
+#     arr = []
+#     while i < n and j < m:
+#         if arr1[i] <= arr2[j]:
+#             arr.append(arr1[i])
+#             i += 1
+#         else:
+#             arr.append(arr2[j])   
+#             j += 1
+#     while i < n:
+#         arr.append(arr1[i])         
+#         i += 1
+#     while j < m :
+#         arr.append(arr2[j])    
+#         j += 1
+
+#     return arr[k -1]
+
+# a = [2 , 3 ,6 , 7 , 9]
+# b = [1 , 4 , 8 , 10]
+
+# print(kthElement( a , b , 5 , 4  , 5))
+#### Problem Number 124
+# def angryCow()
+#### Problem 125
+
+def Allocate(arr , n , m):
+    if n < m:
+        return -1
+    else:
+
+
+
 # # # ### Fibonnaci sequence
 # # # # def fib(n):
 # # # #     if n ==1 or n == 2:
