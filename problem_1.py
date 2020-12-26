@@ -957,10 +957,48 @@
 # def angryCow()
 #### Problem 125
 
-def Allocate(arr , n , m):
-    if n < m:
-        return -1
-    else:
+# def Allocate(arr , n , m):
+#     if n < m:
+#         return -1
+#     else:
+
+### Problem Number 126
+# def dontCutTrees(arr , n ,k):
+    
+
+
+
+        
+    
+
+# arr = [15 , 15 , 10 , 15]
+# print(dontCutTrees(arr , 4 , 4))
+### Problem Number 127
+def job(arr1 , arr2 , arr3 , n):
+    arr = []
+    sum = 0
+    for i in range(n):
+        arr.append([arr2[i] , arr1[i] , i])
+    arr.sort()
+    arr = arr[::-1]
+    print(arr)
+
+    while i < n :
+        if temp >= arr[i][0]:
+            temp = arr[i][1]
+            sum += arr3[arr[i][2]]
+        else:
+            i += 1       
+    return sum
+
+a = [1 , 2 , 3 , 4 ,6]
+b = [3 , 5 , 10 ,6 ,9]
+c = [20, 20, 100, 70, 60]
+print(job(a , b , c , 5 ))
+
+
+
+#### 
 
 
 
