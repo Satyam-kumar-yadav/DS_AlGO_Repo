@@ -336,14 +336,14 @@
 
 # #         for i in range( k , row):
 # #             print(a[i][col - 1] , end = " ")
-# #         col -= 1    
+# #         col -= 1
 # #         if k < m:
 # #             for i in range(col - 1 , l -1 , -1):
 # #                 print(a[row - 1][i] , end= " ")
 # #             row -= 1
 # #             for i in range(row - 1 , k , -1 ):
 # #                 print(a[i][l] , end = " ")
-# #           l += 1    
+# #           l += 1
 
 # # a = [[1, 2, 3, 4, 5, 6],
 # #      [7, 8, 9, 10, 11, 12],
@@ -361,45 +361,45 @@
 #         if arr[mid] == m:
 #             return True
 #         elif m < arr[mid] :
-#             return binarysearch(arr , r , mid - 1 , m)   
+#             return binarysearch(arr , r , mid - 1 , m)
 #         else:
 #             return binarysearch(arr , mid + 1 , l , m)
 #     else:
-#         return False            
-# def mat(matrix , r , l , m):    
+#         return False
+# def mat(matrix , r , l , m):
 #     for i in range(r):
 #         if m > matrix[i][0] and m < matrix[i][l - 1] :
 #              return binarysearch(matrix[i] , 0 , l - 1, m)
-                    
+
 #         else:
 #             return False
 # # m = [1 , 3 , 5 , 7 , 6]
-# # print(binarysearch(m , 0 , len(m) - 1, 8))    
+# # print(binarysearch(m , 0 , len(m) - 1, 8))
 
-# matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,50]] 
+# matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,50]]
 # target = 3
 # print(mat(matrix , 3 , 4 , target))
 
 
-##### Problem - Line Number 56
+# Problem - Line Number 56
 # class Solution:
 #     def reverseString(self, s: List[str]) -> None:
 #         """
 #         Do not return anything, modify s in-place instead.
-        
+
 #         """
 #         n = len(s) // 2
 #         for i in range(n):
 #             temp = s[len(s) - i - 1]
 #             s[len(s) - i - 1] = s[i]
 #             s[i] = temp
-##### Prloblem - Line Number 57
+# Prloblem - Line Number 57
 # class Solution:
 # 	def isPlaindrome(self, S):
 # 	    if S == S[::-1]:
 # 	        return 1
 # 	    return 0
-##### Problem - Line Number 58
+# Problem - Line Number 58
 # def reverseString(string , count):
 #     for i in string:
 #         count[ord(i)] += 1
@@ -418,7 +418,7 @@
 # filln(string)
 # ##### Problem - Line Number 59
 # Why String are immutable
-##### Problem - Line Number 60
+# Problem - Line Number 60
 # def stingcheck(s1 , s2):
 #     temp = s1 + s1
 #     if s2 in temp:
@@ -429,7 +429,7 @@
 # s1 = "ABCD"
 # s2 = "CDAB"
 # print(stingcheck(s1 , s2))
-##### Problem - Line Number 61
+# Problem - Line Number 61
 # def string_count(a1 , a2 , String):
 #     i , j , k = 0 , 0 , 0
 #     while k != len(String):
@@ -439,21 +439,21 @@
 #             j += 1
 #         else:
 #             return False
-#     return True            
-##### Problem - Line Number 62
-##### Problem - Line Number 66
-# def toString(List): 
-# 	return ''.join(List) 
+#     return True
+# Problem - Line Number 62
+# Problem - Line Number 66
+# def toString(List):
+# 	return ''.join(List)
 
-# def permute(a, l, r): 
-# 	if l==r: 
+# def permute(a, l, r):
+# 	if l==r:
 # 		print(toString(a))
-# 	else: 
-# 		for i in range(l,r+1): 
-# 			a[l], a[i] = a[i], a[l] 
-# 			permute(a, l+1, r) 
+# 	else:
+# 		for i in range(l,r+1):
 # 			a[l], a[i] = a[i], a[l]
-##### Problem - Line Number 67
+# 			permute(a, l+1, r)
+# 			a[l], a[i] = a[i], a[l]
+# Problem - Line Number 67
 # def permute(arr , n):
 #     zero= 0
 #     one = 0
@@ -463,25 +463,24 @@
 #             one += 1
 #         else:
 #             zero += 1
-        
+
 #         if one == zero:
 #             cnt += 1
 #     if one != zero:
-#         return -1    
+#         return -1
 
-#     return cnt        
+#     return cnt
 
 # str = "0111100010"
-# n = len(str) 
-# print(permute(str, n)) 
-##### Problem - Line Number 70
+# n = len(str)
+# print(permute(str, n))
+# Problem - Line Number 70
 # def nextpermutation(arr , n):
 #     for i in range(n -1 , 0 , -1):
 #         if arr[i -1 ] < arr[i]:
 #             break
 
-#     if i == 1 and arr[i] <= arr[i-1]: 
-
+#     if i == 1 and arr[i] <= arr[i-1]:
 
 
 #             temp = arr[i -1]
@@ -492,28 +491,28 @@
 
 #             arr[min] , temp = temp , arr[min]
 
-########incomplete
-######## Problem - Line Number 71
-# def ispar(expr): 
-# 	stack = [] 
-# 	for char in expr: 
-# 		if char in ["(", "{", "["]:  
-# 			stack.append(char) 
-# 		else: 
-# 			if not stack: 
+# incomplete
+# Problem - Line Number 71
+# def ispar(expr):
+# 	stack = []
+# 	for char in expr:
+# 		if char in ["(", "{", "["]:
+# 			stack.append(char)
+# 		else:
+# 			if not stack:
 # 				return False
-# 			current_char = stack.pop() 
-# 			if current_char == '(': 
-# 				if char != ")": 
+# 			current_char = stack.pop()
+# 			if current_char == '(':
+# 				if char != ")":
 # 					return False
-# 			if current_char == '{': 
-# 				if char != "}": 
+# 			if current_char == '{':
+# 				if char != "}":
 # 					return False
-# 			if current_char == '[': 
-# 				if char != "]": 
+# 			if current_char == '[':
+# 				if char != "]":
 # 					return False
 
-# 	if stack: 
+# 	if stack:
 # 		return False
 # 	return True
 # s = "{([])}"
@@ -522,14 +521,14 @@
 # else:
 #     print("false")
 # ######## Problem - Line Number 72
-# def wordBreak(wordList, word): 
-# 	if word == '': 
+# def wordBreak(wordList, word):
+# 	if word == '':
 # 		return True
-# 	else: 
-# 		wordLen = len(word) 
+# 	else:
+# 		wordLen = len(word)
 
-# 	return any([(word[:i] in wordList) and wordBreak(wordList, word[i:]) for i in range(1, wordLen+1)]) 
-    
+# 	return any([(word[:i] in wordList) and wordBreak(wordList, word[i:]) for i in range(1, wordLen+1)])
+
 
 # # B = { "i", "like", "sam", "sung", "samsung", "mobile",
 # # "ice","cream", "icecream", "man", "go", "mango" }
@@ -551,25 +550,25 @@
 # # 		if i == " ":
 # # 			output += "0"
 # # 		else:
-# # 			pos = ord(i) - ord("A")	
+# # 			pos = ord(i) - ord("A")
 # # 			output += arr[pos]
-						
+
 # # 	return output
 
-# # str = ["2", "22", "222", 
-# #        "3", "33", "333", 
-# #        "4", "44", "444", 
-# #        "5", "55", "555", 
-# #        "6", "66", "666", 
-# #        "7", "77", "777", "7777", 
-# #        "8", "88", "888", 
-# #        "9", "99", "999", "9999" ] 
-  
+# # str = ["2", "22", "222",
+# #        "3", "33", "333",
+# #        "4", "44", "444",
+# #        "5", "55", "555",
+# #        "6", "66", "666",
+# #        "7", "77", "777", "7777",
+# #        "8", "88", "888",
+# #        "9", "99", "999", "9999" ]
+
 # # input1 = "GEEKSFORGEEKS"
-# # print(mobileNum(str, input1)) 
+# # print(mobileNum(str, input1))
 # # ######## Problem - Line Number 76
 # # def balancedString(S):
-# # 	arr1 = list()			
+# # 	arr1 = list()
 # # 	for i in S:
 # # 		if (len(arr1) == 0 and  i == "}") or i == "{":
 # # 			arr1.append(i)
@@ -580,10 +579,10 @@
 # # 			else:
 # # 				arr1.append(count)
 # # 				arr1.append(i)
-# # 	print (arr1)			
+# # 	print (arr1)
 
 # # 	l1 = 0
-# # 	l2 = 0 
+# # 	l2 = 0
 # # 	count = 0
 # # 	for i in arr1:
 # # 		if i == "{":
@@ -596,7 +595,7 @@
 # # 	elif l1 % 2 != 0 and l2 % 2 != 0:
 # # 		count = l1 //2 + l2 // 2 + 2
 # # 	else:
-# # 		count = -1		
+# # 		count = -1
 
 # # 	return count
 
@@ -611,8 +610,6 @@
 # #         for j in range(len(i)):
 
 
-
-
 # ######## Problem - Line Number 101
 # # def occurnce(arr , n , m):
 # #     arr1 = list()
@@ -622,7 +619,7 @@
 # #         for i in range(n):
 # #             if arr[i] == m:
 # #                 arr1.append(i)
-# #         print(arr1[0] , arr1[-1])        
+# #         print(arr1[0] , arr1[-1])
 
 # # # a = [1, 3, 5, 5, 5, 5, 7, 123, 125 , 5]
 # # a = [1, 2, 2, 2, 2, 3, 4, 7, 8, 8]
@@ -636,7 +633,7 @@
 # # # 	    for i in range(n+1):
 # # # 		    if i == arr[i -1]:
 # # # 		        arr1.append(arr[i-1])
-# # # 	    return arr1      
+# # # 	    return arr1
 
 # # # #### Problem - Line Number 103
 # # # class Solution:
@@ -644,36 +641,36 @@
 # # #         for i in range(len(nums)):
 # # #             if nums[i] == target:
 # # #                 return i
-            
-# # #         return -1   
+
+# # #         return -1
 
 # # #### Problem - Line Number 104
 # # # class Solution:
 # # #     def countSquares(self, N):
-# # #         # code here 
+# # #         # code here
 # # #         return int(math.sqrt(N -1))
 
 # # # # #### Problem - Line Number 107
-# def findTwoElement(arr, n): 
+# def findTwoElement(arr, n):
 #     arr1 = []
 #     se = set()
 #         # code here
 #     for i in range(n):
 #         if i+ 1 not in arr:
 #             arr1.append(i + 1)
-        
+
 #     for i in range(n):
 #         if arr[i] not in se:
 #             se.add(arr[i])
 #         else:
 #             arr1.append(arr[i])
-                
-#     return arr1[::-1] 
+
+#     return arr1[::-1]
 
 # a = [1 , 3 , 3]
 
 # print(findTwoElement(a , 3 ))
-##### problem Number - 108
+# problem Number - 108
 # from collections import Counter
 # def max(A , N):
 #     n = N // 2
@@ -681,9 +678,9 @@
 # #     for i in dt:
 # #         if dt[i] > n:
 # #             return i
-# #     return -1    
+# #     return -1
 
-# # A = [1 , 2 , 3]    
+# # A = [1 , 2 , 3]
 # # N = 3
 # ##### problem Number - 108
 # # def pairdiff(arr , n , m):
@@ -693,8 +690,8 @@
 # #     for i in arr:
 # #         if i + m in x:
 # #             return 1
-# #     return -1        
-        
+# #     return -1
+
 # # t = int(input())
 # # for _ in range(t):
 # #     n,k=map(int,input().strip().split())
@@ -734,33 +731,33 @@
 #                     l += 1
 #                     r -= 1
 #                 elif arr[i] + arr[j] + arr[l] + arr[r] < k:
-#                     l += 1    
+#                     l += 1
 #                 else:
-#                     r -= 1  
+#                     r -= 1
 
-#     return arr1                               
+#     return arr1
 # A = [10,2,3,4,5,7,8]
 # print(fourSum(A ,23))
-### Problem Number - 111
-# # def find_max_sum(arr): 
+# Problem Number - 111
+# # def find_max_sum(arr):
 # 	# incl = 0
 # 	# excl = 0
-	
-# 	# for i in arr: 
-		
-# # 	# 	# Current max excluding i (No ternary in 
-# # 	# 	# Python) 
-# # 	# 	new_excl = excl if excl>incl else incl 
-		
-# # 	# 	# Current max including i 
-# # 	# 	incl = excl + i 
-# # 	# 	excl = new_excl 
-	
-# # 	# # return max of incl and excl 
-# # 	# return (excl if excl>incl else incl) 
 
-# # # Driver program to test above function 
-# # # arr = [5, 5, 10, 100, 10, 5] 
+# 	# for i in arr:
+
+# # 	# 	# Current max excluding i (No ternary in
+# # 	# 	# Python)
+# # 	# 	new_excl = excl if excl>incl else incl
+
+# # 	# 	# Current max including i
+# # 	# 	incl = excl + i
+# # 	# 	excl = new_excl
+
+# # 	# # return max of incl and excl
+# # 	# return (excl if excl>incl else incl)
+
+# # # Driver program to test above function
+# # # arr = [5, 5, 10, 100, 10, 5]
 # # # print(find_max_sum(arr) )
 # # ########## Problem Number 113
 # # def countTriplets(arr, n, sum):
@@ -781,17 +778,17 @@
 # # print(countTriplets(arr , 5 , 12))
 # ######### Problem Number 114
 # with(space)
-# def merge(arr1, arr2, n, m): 
+# def merge(arr1, arr2, n, m):
 #     # code here
 #     arr= []
-#     i = 0 
+#     i = 0
 #     j = 0
 #     while i < n and j < m:
 #         if arr1[i] < arr2[j]:
 #             arr.append(arr1[i])
 #             i += 1
 #         else:
-#             arr.append(arr2[j])    
+#             arr.append(arr2[j])
 # #             j += 1
 
 # #     while i < n:
@@ -799,24 +796,24 @@
 # #         i += 1
 # #     while j < m:
 # #         arr.append(arr2[j])
-# #         j += 1                
-            
+# #         j += 1
+
 # #     return arr
 
-# # arr1 = [10, 12]    
+# # arr1 = [10, 12]
 # # arr2 = [5, 18, 20]
 # # print(merge(arr1 , arr2 , 2 , 3))
 # ####without Space
-# # def merge(arr1 , arr2 , n , m):
-# #     for i in range(m - 1 , - 1 , -1):
-# #         last = arr1[n - 1]
-# #         j = n - 2
-# #         while(j >= 0 and arr2[i] < arr1[j]):
-# #             arr1[j + 1] = arr1[j]
-# #             j -= 1
-# #         if  j != n -2 or last > arr2[i]:
-# #             arr1[j + 1] = arr2[i]
-# #             arr2[i] = last        
+# def merge(arr1 , arr2 , n , m):
+#     for i in range(m - 1 , - 1 , -1):
+#         last = arr1[n - 1]
+#         j = n - 2
+#         while(j >= 0 and arr2[i] < arr1[j]):
+#             arr1[j + 1] = arr1[j]
+#             j -= 1
+#         if  j != n -2 or last > arr2[i]:
+#             arr1[j + 1] = arr2[i]
+#             arr2[i] = last
 
 # # arr1 = [1, 3, 5, 7]
 # # arr2 = [0, 2, 6, 8, 9]
@@ -824,49 +821,44 @@
 # # print(arr1 + arr2)
 # ######problem number 115
 # def subarray(arr , n):
-#     count = 0 
+#     count = 0
 #     sum = 0
 #     old_sum = 0
 #     x = set()
 #     for i in range(n):
-#         x.add(sum) 
-#         old_sum = sum    
+#         x.add(sum)
+#         old_sum = sum
 #         sum += arr[i]
 #         if sum in x:
 #             count += 1
 #         if old_sum == sum:
-#             count += 1    
-#     print(x)        
-#     return count        
+#             count += 1
+#     print(x)
+#     return count
 # a = [6,-1,-3,4,-2,2,4,6,-12,-7]
 # print(subarray(a , 10))
-#### Problem number 116
+# Problem number 116
 # def prod(arr , n):
-    # left = [0] * n
-    # right = [0] * n
-    # prod1 = [0] * n
-    # left[0] = 1
-    # right[n - 1] = 1
-    # for i in range(1 , n):
-    #     left[i] = arr[i - 1] * left[i -1]
-    # for i in range(n - 2 , -1 , -1):
-    #     right[i]  = arr[i + 1] * right[i + 1]  
+# left = [0] * n
+# right = [0] * n
+# prod1 = [0] * n
+# left[0] = 1
+# right[n - 1] = 1
+# for i in range(1 , n):
+#     left[i] = arr[i - 1] * left[i -1]
+# for i in range(n - 2 , -1 , -1):
+#     right[i]  = arr[i + 1] * right[i + 1]
 
-    # for i in range(n):
-    #     prod1[i] = left[i] * right[i]
+# for i in range(n):
+#     prod1[i] = left[i] * right[i]
 
-    # return prod1     
+# return prod1
 
-### Problem number 117
+# Problem number 117
 # def minSwap(arr , n):
 
 
-
-
-
-
-
-# # a = [10, 3, 5, 6, 2]    
+# # a = [10, 3, 5, 6, 2]
 # # print(minSwap(a , 5))
 # # Problem from codechef
 # # def killMonster(a , b , c):
@@ -876,7 +868,7 @@
 # #     if sum % 9 != 0 or m < temp:
 # #         print("No")
 # #     else:
-# #         print("Yes")     
+# #         print("Yes")
 
 # # killMonster(10 , 1 , 7)
 # # ### problem Number 119
@@ -885,8 +877,8 @@
 # #     for i in range(len(arr)):
 # #         if arr[i] <= n:
 # #             sum += arr[i]
-# #     return sum        
-# # a = [1, 2, 3, 4, 5, 6, 7]    
+# #     return sum
+# # a = [1, 2, 3, 4, 5, 6, 7]
 # # print(bishuSoldiers( a , 10 ))
 # ### Problem Number 120
 # ### Problem Number 122
@@ -894,12 +886,12 @@
 #     pi = findPivot(arr , l , r)
 #     if pi == -1:
 #         return binarysearch(arr , l , r ,k)
-        
+
 #     if arr[pi] == k:
 #         return pi
 #     if arr[0] <= k:
 #         return binarysearch(arr , l , pi - 1 , k)
-#     return binarysearch(arr , pi + 1 , r , k)    
+#     return binarysearch(arr , pi + 1 , r , k)
 
 
 # def findPivot(arr , l , r):
@@ -917,151 +909,305 @@
 # #     return findPivot(arr , mid + 1 , r)
 
 
-
 # # def binarysearch(arr ,l  ,r , k):
 # #     if l <= r:
 # #         mid = l + (r- l) // 2
 # #         if arr[mid] == k:
 # #             return mid
 # #         elif arr[mid] < k:
-# #             return binarysearch(arr , mid + 1 , r , k)   
+# #             return binarysearch(arr , mid + 1 , r , k)
 # #         else:
 # #             return binarysearch(arr , l , mid - 1 , k)
 # # a = [5, 6, 7, 8, 9, 10, 1, 2, 3]
-# # print(pivotBinary(a , 0 , len(a) - 1 , 3))
-# ### Problem Number 123
-# def kthElement(arr1 , arr2 , n , m , k):
-#     i , j = 0 , 0
-#     arr = []
-#     while i < n and j < m:
-#         if arr1[i] <= arr2[j]:
-#             arr.append(arr1[i])
-#             i += 1
-#         else:
-#             arr.append(arr2[j])   
-#             j += 1
-#     while i < n:
-#         arr.append(arr1[i])         
-#         i += 1
-#     while j < m :
-#         arr.append(arr2[j])    
-#         j += 1
+# # # print(pivotBinary(a , 0 , len(a) - 1 , 3))
+# # ### Problem Number 123
+# # def kthElement(arr1 , arr2 , n , m , k):
+# #     i , j = 0 , 0
+# #     arr = []
+# #     while i < n and j < m:
+# #         if arr1[i] <= arr2[j]:
+# #             arr.append(arr1[i])
+# #             i += 1
+# # #         else:
+# # #             arr.append(arr2[j])
+# # #             j += 1
+# # #     while i < n:
+# # #         arr.append(arr1[i])
+# # #         i += 1
+# # #     while j < m :
+# # #         arr.append(arr2[j])
+# # #         j += 1
 
-#     return arr[k -1]
+# # #     return arr[k -1]
 
-# a = [2 , 3 ,6 , 7 , 9]
-# b = [1 , 4 , 8 , 10]
+# # # a = [2 , 3 ,6 , 7 , 9]
+# # # b = [1 , 4 , 8 , 10]
 
-# print(kthElement( a , b , 5 , 4  , 5))
-#### Problem Number 124
-# def angryCow()
-#### Problem 125
+# # # print(kthElement( a , b , 5 , 4  , 5))
+# # #### Problem Number 124
+# # # def angryCow()
+# # #### Problem 125
 
-# def Allocate(arr , n , m):
-#     if n < m:
-#         return -1
-#     else:
+# def isPossible(arr , n , m , current_min):
+#     student = 1
+#     sum = 0
+#     for i in range(n):
+#         if arr[i] > current_min:
+#             return False
+#         if sum + arr[i]  > current_min:
+#             student += 1
+# #             sum = arr[i]  
+# #             if student > m:
+# #                 return False    
+# #         else:
+# #             sum += arr[i]    
 
-### Problem Number 126
-# def dontCutTrees(arr , n ,k):
     
+# #     return True
+
+# # def Allocate(arr , n , m):
+# #     result = 10**9
+# #     start , end = 0 , 0
+# #     for i in range(len(arr)):
+# #         end += arr[i]
+
+# #     while(start <= end):
+# #         mid = (end + start) // 2
+# #         if isPossible(arr , n , m , mid):
+# #             result = min(result , mid)
+# #             end = mid - 1
+# #         else:
+# #             start = mid + 1  
+
+# #     return result
+
+# # arr = [12, 34, 67, 90] 
+# # n = len(arr) 
+# # m = 2   # No. of students 
+# # print(Allocate(arr , n , m))
 
 
+
+
+# # ### Problem Number 126
+# def maxArr(arr):
+#     temp = arr[0]
+#     for i in arr:
+#         if i > temp:
+#             temp = i
+#     return temp
+
+# def minArr(arr):
+#     temp = arr[0]
+#     for i in arr:
+#         if i < temp:
+#             temp = i
+#     return temp        
+
+# def dontCutTrees(arr , n ,k):
+#     start = minArr(arr)
+#     end = maxArr(arr)
+#     result = 10**9
+#     while(start <= end):
+#         sum = 0
+#         mid = (start + end) // 2
+#         for i in range(n):
+#             if (arr[i] - mid) > 0:
+#                 sum += (arr[i] - mid)
+#         print(mid)
+#         if sum == k:
+#             return mid
+#         if sum < k:
+
+#             end = mid - 1
+#         else:
+#             result = mid
+#             start = mid + 1    
+
+#     return result
+
+
+# arr = [114, 55, 95, 131, 77, 111, 141 ]
+# print(dontCutTrees(arr , 7 , 95))
+# ### Problem Number 127
+# def job(arr1 , arr2 , arr3 , n):
+#     arr = []
+#     sum = 0
+#     for i in range(n):
+#         arr.append([arr2[i] , arr1[i] , i])
+#     arr.sort()
+#     arr = arr[::-1]
+#     print(arr)
+
+#     while i < n :
+#         if temp >= arr[i][0]:
+#             temp = arr[i][1]
+#             sum += arr3[arr[i][2]]
+#         else:
+#             i += 1
+#     return sum
+
+# a = [1 , 2 , 3 , 4 ,6]
+# b = [3 , 5 , 10 ,6 ,9]
+# c = [20, 20, 100, 70, 60]
+# print(job(a , b , c , 5 ))
+
+
+# Problem Number 128
+# def AM(A, B, C):
+#     temp = B - A
+#     if C == 0 and A == B:
+#         return 1
+#     elif C == 0 and A != B:
+#         return 0
+#     else:        
+#         if temp % C == 0 and ((B > A and C > 0) or (B < A and C < 0)) or A == B:
+#             return 1
+#         else:
+#             return 0        
+
+
+
+# a = 10
+# b = 10
+# c = 0
+# print(AM(a, b, c))
+### Problem Number 129
+### Problem Number 130
+# def isPossible(arr , n , m , current_min):
+#     student = 1
+#     sum = 0
+#     for i in range(n):
+#         if arr[i] > current_min:
+#             return False
+#         if sum + arr[i] > current_min:
+#             student += 1
+#             sum = arr[i]
+#             if student > m:
+#                 return False
+#         else:
+#             sum += arr[i]            
+#     return True        
+
+# def maxArr(arr):
+#     a = arr[0]
+#     for i in arr:
+#         if i > a:
+#             a = i
+#     return a        
+# def painters(a , b , arr):
+#     if a >= len(arr):
+#         return maxArr(arr)
+#     else:
+#         sum = 0
+#         result = 10**9
+#         for i in range(len(arr)):
+#             sum += arr[i]
+
+#         start , end = 0 , sum
+#         while start <= end:
+#             mid = (end + start) // 2
+#             if isPossible(arr , len(arr) , a , mid):
+#                 result = min(result , mid)   
+#                 end = mid - 1
+#             else:
+#                 start = mid + 1
+#     return result
+
+# A = 10
+# B = 1
+# C = [1, 8, 11, 3]
+# print(painters(A , B , C))
+
+### Problem Number 134
+### Problem Number 135
+def merge(arr1 , arr2):
+    arr = []
+    i , j = 0 , 0 
+    while(i < len(arr1) and j < len(arr2) ):
+        if arr1[i] < arr2[j]:
+            arr.append(arr1[i])
+            i += 1
+        else:
+            arr.append(arr2[j])
+            j += 1
+
+    if i == len(arr1):   arr.extend(arr2[j:])     
+    else: arr.extend(arr1[i:])
+
+    return arr
+
+def merge_sort(arr):
+    if len(arr) <= 1: return arr    
+    left , right = merge_sort(arr[:len(arr) // 2]) , merge_sort(arr[len(arr) // 2:])
+    merge(left , right)
+
+a = [0 , 3 , 2 , 5]
+print(merge_sort(a))
 
         
-    
-
-# arr = [15 , 15 , 10 , 15]
-# print(dontCutTrees(arr , 4 , 4))
-### Problem Number 127
-def job(arr1 , arr2 , arr3 , n):
-    arr = []
-    sum = 0
-    for i in range(n):
-        arr.append([arr2[i] , arr1[i] , i])
-    arr.sort()
-    arr = arr[::-1]
-    print(arr)
-
-    while i < n :
-        if temp >= arr[i][0]:
-            temp = arr[i][1]
-            sum += arr3[arr[i][2]]
-        else:
-            i += 1       
-    return sum
-
-a = [1 , 2 , 3 , 4 ,6]
-b = [3 , 5 , 10 ,6 ,9]
-c = [20, 20, 100, 70, 60]
-print(job(a , b , c , 5 ))
 
 
+# # # # ### Fibonnaci sequence
+# # # # # def fib(n):
+# # # # #     if n ==1 or n == 2:
+# # # # #         return 1
+# # # # #     else:
+# # # # #         return fib(n -1 ) + fib(n -2)
 
-#### 
+# # # # # print(fib(50))
+# # # # ########Linked List
+# # # # # #### Problem - Line Number 139
+# # # # class Node:
+# # # #     def __init__(self , data):
+# # # #         self.data = data
+# # # #         self.next = None
+
+# # # # class Linkedlist:
+# # # #     def __init__(self):
+# # # #         self.head = None
+
+# # # #     def push(self , new_data):
+# # # #         new_data = Node(new_data)
+# # # #         new_data.next = self.head
+# # # #         self.head = new_data
+
+# # # #     def reverse(self):
+# # # #         prev = None
+# # # #         current =  self.head
+# # # #         while( current is not None):
+# # # #             next = current.next
+# # # #             current.next = prev
+# # # #             prev = current
+# # # #             current = next
+# # # #         self.head = prev
+
+# # # #     def printlist(self):
+# # # #         temp = self.head
+# # # #         while temp:
+# # # #             print(temp.data)
+# # # #             temp = temp.next
 
 
+# # # # # #### Problem - Line Number 140
+# # class Node:
+# #     def __init__(self , data):
+# #         self.data = data
+# #         self.next = None
+# # class Linkedlist:
+# #     def __init__(self):
+# #         self.head = None
 
-# # # ### Fibonnaci sequence
-# # # # def fib(n):
-# # # #     if n ==1 or n == 2:
-# # # #         return 1
-# # # #     else:
-# # # #         return fib(n -1 ) + fib(n -2)   
+# #     def push(self , new_data):
+# #         new_data = Node(new_data)
+# #         new_data.next = self.head
+# #         self.head = new_data
 
-# # # # print(fib(50))
-# # # ########Linked List
-# # # # #### Problem - Line Number 139
-# # # class Node:
-# # #     def __init__(self , data):
-# # #         self.data = data
-# # #         self.next = None
-
-# # # class Linkedlist:
-# # #     def __init__(self):
-# # #         self.head = None
-
-# # #     def push(self , new_data):
-# # #         new_data = Node(new_data)    
-# # #         new_data.next = self.head
-# # #         self.head = new_data
-
-# # #     def reverse(self):
+# # #     def reverse(self ,head , k):
+# # #         current = head
 # # #         prev = None
-# # #         current =  self.head
-# # #         while( current is not None):
-# # #             next = current.next
-# # #             current.next = prev
-# # #             prev = current
-# # #             current = next
-# # #         self.head = prev
-
-# # #     def printlist(self):
-# # #         temp = self.head
-# # #         while temp:
-# # #             print(temp.data)
-# # #             temp = temp.next        
-
-
-# # # # #### Problem - Line Number 140
-# class Node:
-#     def __init__(self , data):
-#         self.data = data
-#         self.next = None
-# class Linkedlist:
-#     def __init__(self):
-#         self.head = None
-    
-#     def push(self , new_data):
-#         new_data = Node(new_data)    
-#         new_data.next = self.head
-#         self.head = new_data
-
-# #     def reverse(self ,head , k):
-# #         current = head
-# #         prev = None
-# #         count = 0 
-# #         if not head or head.next is None:
+# # #         count = 0
+# # #         if not head or head.next is None:
 # #             return
 # #         while current is not None and count < k:
 # #             next = current.next
@@ -1073,8 +1219,6 @@ print(job(a , b , c , 5 ))
 # #         self.reverse(head.next , k)
 
 
-            
-    
 # # ll = Linkedlist()
 # # ll.push(20)
 # # ll.push(18)
@@ -1090,13 +1234,13 @@ print(job(a , b , c , 5 ))
 #         fast = fast.next.next
 #         if slow == fast:
 #             return 1
-        
-#     return 0    
+
+#     return 0
 
 # def removeloop(head):
-#     slow = fast = head 
+#     slow = fast = head
 #     while(1):
-#         slow = slow.next   
+#         slow = slow.next
 #         fast = fast.next.next
 #         if slow == fast:
 #             break
@@ -1111,15 +1255,15 @@ print(job(a , b , c , 5 ))
 #         return
 #     temp = head
 #     while(temp.next.next):
-#         temp = temp.next 
-#     temp.next = head       
-#     head = temp.next    
+#         temp = temp.next
+#     temp.next = head
+#     head = temp.next
 #     temp.next = None
 
 # def removeDuplicates(head):
 #     #code here
 #     if head == None:
-#         return 
+#         return
 #     if head.next != None:
 #         if head.data == head.next.data:
 #             temp = head.next
@@ -1127,7 +1271,7 @@ print(job(a , b , c , 5 ))
 #             removeDuplicates(head)
 #         else:
 #             removeDuplicates(head.next)
-    
+
 #     return head
 
 # # # # #### Problem - Line Number 238
@@ -1136,7 +1280,7 @@ print(job(a , b , c , 5 ))
 #     arr2 = list()
 #     for i in range(len(start)):
 #         arr.append([end[i] , start[i] , i])
-#     arr.sort()     
+#     arr.sort()
 #     arr = arr[::-1]
 #     arr2.append(arr[0][2] + 1)
 #     temp = arr[0][1]
@@ -1152,9 +1296,8 @@ print(job(a , b , c , 5 ))
 # s = [1,3,0,5,8,5]
 # e = [2,4,6,7,9,9]
 # print(maximumMeetings(6 , s , e))
-######### Problem - Line Number 239
+# Problem - Line Number 239
 # def problemded(job , n):
-
 
 
 # job = [[1 , 4 , 20] , [2 , 1 , 10]]
