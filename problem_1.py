@@ -610,6 +610,153 @@
 # #         for j in range(len(i)):
 
 
+#### Problem Number 81
+# def romanDup(str):
+#     roman = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000,'IV':4,'IX':9,'XL':40,'XC':90,'CD':400,'CM':900 , 'M':1000 }
+#     i = 0
+#     num = 0
+#     while i < len(str):
+#         if i + 1 < len(str) and str[i : i+2] in roman:
+#             num += roman[str[i:i+2]]
+#             i += 2
+#         else:
+#             num += roman[str[i]]    
+#             i += 1
+
+#     return num
+
+# s = 'V'
+# print(romanDup(s))
+#### Problem Number 82
+# def compare(str1 , str2):
+#     n1 = len(str1)
+#     n2 = len(str2)
+#     result = ""
+#     i , j = 0 , 0
+#     while i < n1 and j < n2:
+#         if str1[i] != str2[j]:
+#             break
+
+#         result += str1[i]
+#         i += 1
+#         j += 1
+
+#     return result        
+
+
+# def longestCommon(strs):
+#     prefix = strs[0]
+#     for i in range(1 , len(strs)):
+#         prefix = compare(prefix , strs[i])
+
+#     return prefix    
+
+
+
+# s = ["car" , "cog"]
+# print(longestCommon(s))
+### Problem Number 83
+# def flip(char):
+#     return "1"  if (char == "0") else "0"
+
+# def minFlip(str , expected):
+#     count = 0
+#     for i in range(len(str)):
+#         if str[i] != expected:
+#             count += 1
+# #         expected = flip(expected) 
+# #     return count
+
+# # def returnFlip(str):
+# # #     return min(minFlip(str , "0") , minFlip(str , "1"))          
+# # s = "001"
+# # print(returnFlip(s))
+# ### problem Number 84
+# # #####Problem Number 85
+# # def checkSwap(string):
+# #     arr1 = []
+# #     arr = list(string)
+# #     for i in range(len(arr)):
+# #         if arr[i] == "[":
+# #             arr1.append(arr[i])   
+# #         elif arr[i] == "]":
+# #             if not arr1:
+# #                 return False
+# #             else:    
+# #                 temp = arr1.pop()
+# #             if temp == "[":   
+# #                 continue
+# #             else:
+# #                 return False
+# #     if not arr1: return True
+# # #     return False
+
+# # # def minSwap(arr , i):
+# # #     temp = arr[i]
+# # #     arr[i] = arr[i + 1]
+# # #     arr[i+1] = temp
+# # #     return arr
+
+# # # def bracket(string):
+# # def swapArr(string):
+# #     pos = []
+# #     for i in range(len(string)):
+# #         if string[i] == "[":
+# #             pos.append(i)
+
+# #     count , sum , idx = 0 , 0 , 0
+# #     arr = list(string)
+# #     for i in range(len(arr)):
+# #         if arr[i] == "[":
+# #             count += 1
+# #             idx += 1
+# #         elif arr[i] == "]":
+# #             count -= 1
+# #         if count < 0:
+# #             sum += pos[idx] - i
+# #             arr[i] , arr[pos[idx]]  = arr[pos[idx]] , arr[i]      
+
+# #             idx += 1
+# #             count = 1
+# #     return sum        
+
+
+
+# # arr = "[]][]["
+# # print(swapArr(arr))
+# ### Problem Number 86
+# # def Lcs(m , n , X , Y):
+# ### problem number 88
+# def checkString(x , arr):
+#     for i in range(len(arr)):
+#         if arr[i] not in x:
+#             return False
+#         return True    
+# def smallestDistinct(string):
+#     x  = set(string)
+#     j = len(x) 
+#     i = 0 
+#     m = ""
+#     while(i + j <= len(string)):
+#         arr = list(string[i:j])
+#         if checkString(x , arr):
+#             m  = string[i:j]
+#         else:
+#             i += 1
+#             j += 1
+
+#     return m    
+
+
+
+# s = "aabcbcdbca"
+# print(smallestDistinct(s))
+####
+
+
+
+
+
 # ######## Problem - Line Number 101
 # # def occurnce(arr , n , m):
 # #     arr1 = list()
@@ -1089,61 +1236,67 @@
 #             sum += arr[i]            
 #     return True        
 
-# def maxArr(arr):
-#     a = arr[0]
-#     for i in arr:
-#         if i > a:
-#             a = i
-#     return a        
-# def painters(a , b , arr):
-#     if a >= len(arr):
-#         return maxArr(arr)
-#     else:
-#         sum = 0
-#         result = 10**9
-#         for i in range(len(arr)):
-#             sum += arr[i]
+# # def maxArr(arr):
+# #     a = arr[0]
+# #     for i in arr:
+# #         if i > a:
+# #             a = i
+# #     return a        
+# # def painters(a , b , arr):
+# #     if a >= len(arr):
+# #         return maxArr(arr)
+# #     else:
+# #         sum = 0
+# #         result = 10**9
+# #         for i in range(len(arr)):
+# #             sum += arr[i]
 
-#         start , end = 0 , sum
-#         while start <= end:
-#             mid = (end + start) // 2
-#             if isPossible(arr , len(arr) , a , mid):
-#                 result = min(result , mid)   
-#                 end = mid - 1
-#             else:
-#                 start = mid + 1
-#     return result
+# #         start , end = 0 , sum
+# #         while start <= end:
+# #             mid = (end + start) // 2
+# #             if isPossible(arr , len(arr) , a , mid):
+# #                 result = min(result , mid)   
+# #                 end = mid - 1
+# #             else:
+# #                 start = mid + 1
+# #     return result
 
-# A = 10
-# B = 1
-# C = [1, 8, 11, 3]
-# print(painters(A , B , C))
+# # A = 10
+# # B = 1
+# # C = [1, 8, 11, 3]
+# # print(painters(A , B , C))
 
-### Problem Number 134
-### Problem Number 135
-def merge(arr1 , arr2):
-    arr = []
-    i , j = 0 , 0 
-    while(i < len(arr1) and j < len(arr2) ):
-        if arr1[i] < arr2[j]:
-            arr.append(arr1[i])
-            i += 1
-        else:
-            arr.append(arr2[j])
-            j += 1
+# ### Problem Number 134
+# ### Problem Number 135
+# def merge(arr1 , arr2):
+#     arr = []
+#     i , j = 0 , 0 
+#     while(i < len(arr1) and j < len(arr2) ):
+#         if arr1[i] < arr2[j]:
+#             arr.append(arr1[i])
+#             i += 1
+#         else:
+#             arr.append(arr2[j])
+#             j += 1
 
-    if i == len(arr1):   arr.extend(arr2[j:])     
-    else: arr.extend(arr1[i:])
+#     if i == len(arr1):   arr.extend(arr2[j:])     
+#     else: arr.extend(arr1[i:])
 
-    return arr
+#     return arr
 
-def merge_sort(arr):
-    if len(arr) <= 1: return arr    
-    left , right = merge_sort(arr[:len(arr) // 2]) , merge_sort(arr[len(arr) // 2:])
-    merge(left , right)
+# def merge_sort(arr):
+#     if len(arr) <= 1:
+#         return arr
+#     mid =  len(arr) // 2
+#     left = arr[:mid]
+#     right = arr[mid:]    
 
-a = [0 , 3 , 2 , 5]
-print(merge_sort(a))
+#     merge_sort(left)
+#     merge_sort(right)
+#     return merge(left , right)
+
+# a = [0 , 3 , 2 , 5]
+# print(merge_sort(a ))
 
         
 
@@ -1274,6 +1427,9 @@ print(merge_sort(a))
 
 #     return head
 
+
+
+
 # # # # #### Problem - Line Number 238
 # def maximumMeetings(n,start,end):
 #     arr = list()
@@ -1301,3 +1457,6 @@ print(merge_sort(a))
 
 
 # job = [[1 , 4 , 20] , [2 , 1 , 10]]
+#### Problem Number 240
+# def HuffmanEncoding()
+######Problem of code Forces
