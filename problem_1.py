@@ -1394,69 +1394,297 @@
 #     slow = fast = head
 #     while(1):
 #         slow = slow.next
-#         fast = fast.next.next
-#         if slow == fast:
-#             break
-#     slow = head
-#     while slow.next != fast.next:
-#         slow = slow.next
-#         fast = fast.next
-#     fast.next = None
+# #         fast = fast.next.next
+# #         if slow == fast:
+# #             break
+# #     slow = head
+# #     while slow.next != fast.next:
+# #         slow = slow.next
+# #         fast = fast.next
+# #     fast.next = None
 
-# def movehead(head):
-#     if not head or head.next is None :
-#         return
-#     temp = head
-#     while(temp.next.next):
-#         temp = temp.next
-#     temp.next = head
-#     head = temp.next
-#     temp.next = None
+# # def movehead(head):
+# #     if not head or head.next is None :
+# #         return
+# #     temp = head
+# #     while(temp.next.next):
+# #         temp = temp.next
+# #     temp.next = head
+# #     head = temp.next
+# #     temp.next = None
 
-# def removeDuplicates(head):
-#     #code here
-#     if head == None:
-#         return
-#     if head.next != None:
-#         if head.data == head.next.data:
-#             temp = head.next
-#             head.next = head.next.next
-#             removeDuplicates(head)
+# # def removeDuplicates(head):
+# #     #code here
+# #     if head == None:
+# #         return
+# #     if head.next != None:
+# #         if head.data == head.next.data:
+# #            temp = head.next
+# #             head.next = head.next.next
+# #             removeDuplicates(head)
+# #         else:
+# #             removeDuplicates(head.next)
+
+# #     return head
+
+# #### Binary Trees
+# class Node:
+#     def __init__(self, data):
+#         self.left = None
+#         self.right = None
+#         self.data = data
+
+#     def insert(self , data):
+#         if self.data:
+#             if data > self.data:
+#                 if self.right is None:
+#                     self.right = Node(data)
+#                 else:
+#                     self.right.insert(data)    
+
+#             if data < self.data:
+#                 if self.left is None:
+#                     self.left = Node(data)        
+#                 else:
+#                     self.left.insert(data)    
+                
+#     def printlist(self):
+#         if self.left:
+#             self.left.printlist()
+#         print(self.data)    
+#         if self.right:
+#             self.right.printlist()
+
+# def recursivInorder(root):
+#     if root is None:
+#         return 
+#     recursivInorder(root.left) 
+#     print(root.data , end = " ")           
+#     recursivInorder(root.right)
+
+# def Inorder(root):
+#     stack = deque()
+#     current = root
+#     while stack or current:
+#         if current:
+#             stack.append(current)
+#             current = current.left
 #         else:
-#             removeDuplicates(head.next)
+#             temp = stack.pop()    
+#             print(temp.data , end = " ")
+#             current = current.right
 
-#     return head
+# def preOrder(root):
+#     if root in None:
+#         return 
+#     print(root.data , end = " ")
+#     preOrder(root.left)
+#     preOrder(root.right)
+
+# def ItterpreOrder(root):
+#     if root is None:
+#         return
+#     stack = deque()    
+#     stack.append(root)
+#     while stack:
+#         curr = stack.pop()
+#         print(curr.data , end = " ")
+#         if curr:
+#             stack.append(curr.left)
+
+#         if curr:
+#             stack.append(curr.right)    
+
+# def postOrder(root):
+#     if root is None:
+#         return
+        
+#     postOrder(root.left)
+#     postOrder(root.right)
+#     print(root.data , end = " ")
+
+# def ItterpostOrder(root):
+#     if root is None:
+#         return 
+#     stack = deque()    
+#     stack.append(root)
+#     ans = deque()
+#     while stack:
+#         curr = stack.pop()
+#         ans.append(curr)
+#         if curr.left:
+#             stack.append(curr.left)
+
+# #         if curr.right:
+# #             stack.append(curr.right)    
+
+# #     while ans:
+# #         print(ans.pop() , end =  " ")  
 
 
+# # def leftView(root):
+# #     if root is None:
+# #         return 
+# #     stack = deque()
+# #     stack.append(root)
+# #     while stack:
+# #         n = len(stack)
+# #         for i in range(1 , n + 1):
+# #             temp = stack.popleft()
+# #             if i == 1:
+# #                 print(temp.data , end = " ")
+# #             if temp.left:
+# #                 stack.append(temp.left)
+# #             if stack.right:
+# #                 stack.append(temp.right)    
 
 
-# # # # #### Problem - Line Number 238
-# def maximumMeetings(n,start,end):
-#     arr = list()
-#     arr2 = list()
-#     for i in range(len(start)):
-#         arr.append([end[i] , start[i] , i])
-#     arr.sort()
-#     arr = arr[::-1]
-#     arr2.append(arr[0][2] + 1)
-#     temp = arr[0][1]
-#     for i in arr:
-#         if i[0] < temp:
-#             arr2.append(i[2] + 1)
-#             temp = i[1]
+# # def level(root , leve , max_level):
+# #     arr = []
+# #     if root is None:
+# #         return
+# #     if max_level[0] < leve:
+# #         arr.append(root.data)
+# #         max_level[0] = leve
+    
+# #     level(root.right , leve + 1 , max_level)    
+# #     level(root.left , leve + 1, max_level)
+    
+# # # #     return arr
+
+# # # # def rightView(root):
+# # # #     max_level = [0]
+# # # #     level(root ,1 , max_level) 
+
+# def zigzag(root):
+#     arr = []
+#     if root is None: 
+#         return 
+#     currnt = []    
+#     next1 = []
+#     lt = True
+#     currnt.append(root)
+#     while len(currnt) > 0:
+#         temp = currnt.pop(-1)            
+#         arr.append(temp)
+
+#         if lt :
+#             if temp.left:
+#                 next1.append(temp.left)    
+#             if temp.right:
+#                 next1.append(temp.right)    
+    
+#         else:
+#             if temp.right:
+#                 next1.append(temp.right)        
+#             if temp.left:
+#                 next1.append(temp.left)    
+    
+#         if len(currnt) == 0:
+#             lt = not lt
+#             currnt , next1 =  next1 , currnt
+# def searchBinary(root , k):
+#     if root is None or root.val == k:
+#         return root
+#     if root.val < k:
+#         return searchBinary(root.right , k)        
+#     return searchBinary(root.left , k)    
+        
+### Insert in Binary tree
+# def Insert(root , k):
+#     if root is None:
+#         return Node(k)
+#     else:            
+#         if root.key == k:
+#             return k    
+#         elif root.key < k:
+#             root.right = Insert(root.right , k)
+#         else:
+#             root.left = Insert(root.left , k )    
+
+#     return root        
+# def minElement(root):
+#     if root is None:
+#         return 
+#     return minElement(root)
+# def predandsucess(root , k , p , q):
+#     if root is None:
+#         return 
+#     predandsucess(root.left , k , p , q )
+#     if root and root.data > k:
+
+#         if ((not p[0]) or p[0] and p[0] >root.data ):
+#             p[0] = root
+
+#     elif(root and root.data < k):
+#         q[0] = root
+#     predandsucess(root.right , k , p , q)  
+
+#     return p , q  
+def CheckBST(root):
+    
+# # # # # # #### Problem - Line Number 238
+# # # def maximumMeetings(n,start,end):
+# # #     arr = list()
+# # #     arr2 = list()
+# # #     for i in range(len(start)):
+# # #         arr.append([end[i] , start[i] , i])
+# # #     arr.sort()
+# # #     arr = arr[::-1]
+# # #     arr2.append(arr[0][2] + 1)
+# # #     temp = arr[0][1]
+# # #     for i in arr:
+# # #         if i[0] < temp:
+# # #             arr2.append(i[2] + 1)
+# # #             temp = i[1]
 
 
-#     return arr2[::-1]
+# # #     return arr2[::-1]
 
 
-# s = [1,3,0,5,8,5]
-# e = [2,4,6,7,9,9]
-# print(maximumMeetings(6 , s , e))
-# Problem - Line Number 239
-# def problemded(job , n):
+# # # s = [1,3,0,5,8,5]
+# # # e = [2,4,6,7,9,9]
+# # # print(maximumMeetings(6 , s , e))
+# # # Problem - Line Number 239
+# # # def problemded(job , n):
 
 
-# job = [[1 , 4 , 20] , [2 , 1 , 10]]
-#### Problem Number 240
-# def HuffmanEncoding()
-######Problem of code Forces
+# # # job = [[1 , 4 , 20] , [2 , 1 , 10]]
+# # #### Problem Number 240
+# # ### Uninon of Two sorted array
+# def mergeArray(a , b , n , m ):
+#     arr = []
+#     i , j = 0 , 0
+#     while i < n and j < m:
+#         if a[i] <= b[j]:
+#             if a[i] not in arr:
+#                 arr.append(a[i])
+#                 i += 1
+#             else:
+#                 i += 1    
+#         elif a[i]  > b[j]:
+#             if b[j] not in arr:
+#                 arr.append(b[j])
+#                 j += 1
+#             else:
+#                 j += 1    
+
+#     while i < n:
+#         if a[i] not in arr:
+#             arr.append(a[i])
+#             i += 1
+#         else:
+#             i += 1    
+#     while j < m:
+#         if b[j]  not in arr:
+#             arr.append(b[j])
+#             j += 1  
+#         else:
+#             j += 1    
+
+#     return arr   
+
+
+# a = [2, 2, 3, 4, 5]
+# b = [1, 1, 2, 3, 4]
+# print(mergeArray(a , b , 5 , 5))
