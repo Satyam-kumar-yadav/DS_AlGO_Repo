@@ -610,7 +610,7 @@
 # #         for j in range(len(i)):
 
 
-#### Problem Number 81
+# Problem Number 81
 # def romanDup(str):
 #     roman = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000,'IV':4,'IX':9,'XL':40,'XC':90,'CD':400,'CM':900 , 'M':1000 }
 #     i = 0
@@ -620,14 +620,14 @@
 #             num += roman[str[i:i+2]]
 #             i += 2
 #         else:
-#             num += roman[str[i]]    
+#             num += roman[str[i]]
 #             i += 1
 
 #     return num
 
 # s = 'V'
 # print(romanDup(s))
-#### Problem Number 82
+# Problem Number 82
 # def compare(str1 , str2):
 #     n1 = len(str1)
 #     n2 = len(str2)
@@ -641,7 +641,7 @@
 #         i += 1
 #         j += 1
 
-#     return result        
+#     return result
 
 
 # def longestCommon(strs):
@@ -649,13 +649,12 @@
 #     for i in range(1 , len(strs)):
 #         prefix = compare(prefix , strs[i])
 
-#     return prefix    
-
+#     return prefix
 
 
 # s = ["car" , "cog"]
 # print(longestCommon(s))
-### Problem Number 83
+# Problem Number 83
 # def flip(char):
 #     return "1"  if (char == "0") else "0"
 
@@ -664,11 +663,11 @@
 #     for i in range(len(str)):
 #         if str[i] != expected:
 #             count += 1
-# #         expected = flip(expected) 
+# #         expected = flip(expected)
 # #     return count
 
 # # def returnFlip(str):
-# # #     return min(minFlip(str , "0") , minFlip(str , "1"))          
+# # #     return min(minFlip(str , "0") , minFlip(str , "1"))
 # # s = "001"
 # # print(returnFlip(s))
 # ### problem Number 84
@@ -678,13 +677,13 @@
 # #     arr = list(string)
 # #     for i in range(len(arr)):
 # #         if arr[i] == "[":
-# #             arr1.append(arr[i])   
+# #             arr1.append(arr[i])
 # #         elif arr[i] == "]":
 # #             if not arr1:
 # #                 return False
-# #             else:    
+# #             else:
 # #                 temp = arr1.pop()
-# #             if temp == "[":   
+# #             if temp == "[":
 # #                 continue
 # #             else:
 # #                 return False
@@ -714,12 +713,11 @@
 # #             count -= 1
 # #         if count < 0:
 # #             sum += pos[idx] - i
-# #             arr[i] , arr[pos[idx]]  = arr[pos[idx]] , arr[i]      
+# #             arr[i] , arr[pos[idx]]  = arr[pos[idx]] , arr[i]
 
 # #             idx += 1
 # #             count = 1
-# #     return sum        
-
+# #     return sum
 
 
 # # arr = "[]][]["
@@ -731,11 +729,11 @@
 #     for i in range(len(arr)):
 #         if arr[i] not in x:
 #             return False
-#         return True    
+#         return True
 # def smallestDistinct(string):
 #     x  = set(string)
-#     j = len(x) 
-#     i = 0 
+#     j = len(x)
+#     i = 0
 #     m = ""
 #     while(i + j <= len(string)):
 #         arr = list(string[i:j])
@@ -745,16 +743,12 @@
 #             i += 1
 #             j += 1
 
-#     return m    
-
+#     return m
 
 
 # s = "aabcbcdbca"
 # print(smallestDistinct(s))
 ####
-
-
-
 
 
 # ######## Problem - Line Number 101
@@ -1103,13 +1097,13 @@
 #             return False
 #         if sum + arr[i]  > current_min:
 #             student += 1
-# #             sum = arr[i]  
+# #             sum = arr[i]
 # #             if student > m:
-# #                 return False    
+# #                 return False
 # #         else:
-# #             sum += arr[i]    
+# #             sum += arr[i]
 
-    
+
 # #     return True
 
 # # def Allocate(arr , n , m):
@@ -1124,16 +1118,14 @@
 # #             result = min(result , mid)
 # #             end = mid - 1
 # #         else:
-# #             start = mid + 1  
+# #             start = mid + 1
 
 # #     return result
 
-# # arr = [12, 34, 67, 90] 
-# # n = len(arr) 
-# # m = 2   # No. of students 
+# # arr = [12, 34, 67, 90]
+# # n = len(arr)
+# # m = 2   # No. of students
 # # print(Allocate(arr , n , m))
-
-
 
 
 # # ### Problem Number 126
@@ -1149,7 +1141,7 @@
 #     for i in arr:
 #         if i < temp:
 #             temp = i
-#     return temp        
+#     return temp
 
 # def dontCutTrees(arr , n ,k):
 #     start = minArr(arr)
@@ -1169,7 +1161,7 @@
 #             end = mid - 1
 #         else:
 #             result = mid
-#             start = mid + 1    
+#             start = mid + 1
 
 #     return result
 
@@ -1207,20 +1199,19 @@
 #         return 1
 #     elif C == 0 and A != B:
 #         return 0
-#     else:        
+#     else:
 #         if temp % C == 0 and ((B > A and C > 0) or (B < A and C < 0)) or A == B:
 #             return 1
 #         else:
-#             return 0        
-
+#             return 0
 
 
 # a = 10
 # b = 10
 # c = 0
 # print(AM(a, b, c))
-### Problem Number 129
-### Problem Number 130
+# Problem Number 129
+# Problem Number 130
 # def isPossible(arr , n , m , current_min):
 #     student = 1
 #     sum = 0
@@ -1233,15 +1224,15 @@
 #             if student > m:
 #                 return False
 #         else:
-#             sum += arr[i]            
-#     return True        
+#             sum += arr[i]
+#     return True
 
 # # def maxArr(arr):
 # #     a = arr[0]
 # #     for i in arr:
 # #         if i > a:
 # #             a = i
-# #     return a        
+# #     return a
 # # def painters(a , b , arr):
 # #     if a >= len(arr):
 # #         return maxArr(arr)
@@ -1255,7 +1246,7 @@
 # #         while start <= end:
 # #             mid = (end + start) // 2
 # #             if isPossible(arr , len(arr) , a , mid):
-# #                 result = min(result , mid)   
+# #                 result = min(result , mid)
 # #                 end = mid - 1
 # #             else:
 # #                 start = mid + 1
@@ -1270,7 +1261,7 @@
 # ### Problem Number 135
 # def merge(arr1 , arr2):
 #     arr = []
-#     i , j = 0 , 0 
+#     i , j = 0 , 0
 #     while(i < len(arr1) and j < len(arr2) ):
 #         if arr1[i] < arr2[j]:
 #             arr.append(arr1[i])
@@ -1279,7 +1270,7 @@
 #             arr.append(arr2[j])
 #             j += 1
 
-#     if i == len(arr1):   arr.extend(arr2[j:])     
+#     if i == len(arr1):   arr.extend(arr2[j:])
 #     else: arr.extend(arr1[i:])
 
 #     return arr
@@ -1289,7 +1280,7 @@
 #         return arr
 #     mid =  len(arr) // 2
 #     left = arr[:mid]
-#     right = arr[mid:]    
+#     right = arr[mid:]
 
 #     merge_sort(left)
 #     merge_sort(right)
@@ -1297,8 +1288,6 @@
 
 # a = [0 , 3 , 2 , 5]
 # print(merge_sort(a ))
-
-        
 
 
 # # # # ### Fibonnaci sequence
@@ -1440,26 +1429,26 @@
 #                 if self.right is None:
 #                     self.right = Node(data)
 #                 else:
-#                     self.right.insert(data)    
+#                     self.right.insert(data)
 
 #             if data < self.data:
 #                 if self.left is None:
-#                     self.left = Node(data)        
+#                     self.left = Node(data)
 #                 else:
-#                     self.left.insert(data)    
-                
+#                     self.left.insert(data)
+
 #     def printlist(self):
 #         if self.left:
 #             self.left.printlist()
-#         print(self.data)    
+#         print(self.data)
 #         if self.right:
 #             self.right.printlist()
 
 # def recursivInorder(root):
 #     if root is None:
-#         return 
-#     recursivInorder(root.left) 
-#     print(root.data , end = " ")           
+#         return
+#     recursivInorder(root.left)
+#     print(root.data , end = " ")
 #     recursivInorder(root.right)
 
 # def Inorder(root):
@@ -1470,13 +1459,13 @@
 #             stack.append(current)
 #             current = current.left
 #         else:
-#             temp = stack.pop()    
+#             temp = stack.pop()
 #             print(temp.data , end = " ")
 #             current = current.right
 
 # def preOrder(root):
 #     if root in None:
-#         return 
+#         return
 #     print(root.data , end = " ")
 #     preOrder(root.left)
 #     preOrder(root.right)
@@ -1484,7 +1473,7 @@
 # def ItterpreOrder(root):
 #     if root is None:
 #         return
-#     stack = deque()    
+#     stack = deque()
 #     stack.append(root)
 #     while stack:
 #         curr = stack.pop()
@@ -1493,20 +1482,20 @@
 #             stack.append(curr.left)
 
 #         if curr:
-#             stack.append(curr.right)    
+#             stack.append(curr.right)
 
 # def postOrder(root):
 #     if root is None:
 #         return
-        
+
 #     postOrder(root.left)
 #     postOrder(root.right)
 #     print(root.data , end = " ")
 
 # def ItterpostOrder(root):
 #     if root is None:
-#         return 
-#     stack = deque()    
+#         return
+#     stack = deque()
 #     stack.append(root)
 #     ans = deque()
 #     while stack:
@@ -1516,15 +1505,15 @@
 #             stack.append(curr.left)
 
 # #         if curr.right:
-# #             stack.append(curr.right)    
+# #             stack.append(curr.right)
 
 # #     while ans:
-# #         print(ans.pop() , end =  " ")  
+# #         print(ans.pop() , end =  " ")
 
 
 # # def leftView(root):
 # #     if root is None:
-# #         return 
+# #         return
 # #     stack = deque()
 # #     stack.append(root)
 # #     while stack:
@@ -1536,7 +1525,7 @@
 # #             if temp.left:
 # #                 stack.append(temp.left)
 # #             if stack.right:
-# #                 stack.append(temp.right)    
+# #                 stack.append(temp.right)
 
 
 # # def level(root , leve , max_level):
@@ -1546,40 +1535,40 @@
 # #     if max_level[0] < leve:
 # #         arr.append(root.data)
 # #         max_level[0] = leve
-    
-# #     level(root.right , leve + 1 , max_level)    
+
+# #     level(root.right , leve + 1 , max_level)
 # #     level(root.left , leve + 1, max_level)
-    
+
 # # # #     return arr
 
 # # # # def rightView(root):
 # # # #     max_level = [0]
-# # # #     level(root ,1 , max_level) 
+# # # #     level(root ,1 , max_level)
 
 # def zigzag(root):
 #     arr = []
-#     if root is None: 
-#         return 
-#     currnt = []    
+#     if root is None:
+#         return
+#     currnt = []
 #     next1 = []
 #     lt = True
 #     currnt.append(root)
 #     while len(currnt) > 0:
-#         temp = currnt.pop(-1)            
+#         temp = currnt.pop(-1)
 #         arr.append(temp)
 
 #         if lt :
 #             if temp.left:
-#                 next1.append(temp.left)    
+#                 next1.append(temp.left)
 #             if temp.right:
-#                 next1.append(temp.right)    
-    
+#                 next1.append(temp.right)
+
 #         else:
 #             if temp.right:
-#                 next1.append(temp.right)        
+#                 next1.append(temp.right)
 #             if temp.left:
-#                 next1.append(temp.left)    
-    
+#                 next1.append(temp.left)
+
 #         if len(currnt) == 0:
 #             lt = not lt
 #             currnt , next1 =  next1 , currnt
@@ -1587,29 +1576,29 @@
 #     if root is None or root.val == k:
 #         return root
 #     if root.val < k:
-#         return searchBinary(root.right , k)        
-#     return searchBinary(root.left , k)    
-        
-### Insert in Binary tree
+#         return searchBinary(root.right , k)
+#     return searchBinary(root.left , k)
+
+# Insert in Binary tree
 # def Insert(root , k):
 #     if root is None:
 #         return Node(k)
-#     else:            
+#     else:
 #         if root.key == k:
-#             return k    
+#             return k
 #         elif root.key < k:
 #             root.right = Insert(root.right , k)
 #         else:
-#             root.left = Insert(root.left , k )    
+#             root.left = Insert(root.left , k )
 
-#     return root        
+#     return root
 # def minElement(root):
 #     if root is None:
-#         return 
+#         return
 #     return minElement(root)
 # def predandsucess(root , k , p , q):
 #     if root is None:
-#         return 
+#         return
 #     predandsucess(root.left , k , p , q )
 #     if root and root.data > k:
 
@@ -1618,11 +1607,222 @@
 
 #     elif(root and root.data < k):
 #         q[0] = root
-#     predandsucess(root.right , k , p , q)  
+#     predandsucess(root.right , k , p , q)
 
-#     return p , q  
-def CheckBST(root):
-    
+#     return p , q
+# def CheckBST(root):
+# def deleting(root , k ):
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.left = None
+#         self.right = None
+
+# def inorder(root):
+#     if root is not None:
+#         inorder(root.left)
+#         print(root.data)
+#         inorder(root.right)
+
+# def insert(node, key):
+#     if node is None:
+#         return Node(key)
+#     if key < node.key:
+#         node.left = insert(node.left, key)
+#     else:
+#         node.right = insert(node.right, key)
+#     return node
+# def minValueNode(node):
+#     current = node
+#     while(current.left is not None):
+#         current = current.left
+
+#     return current
+
+# def deleteNode(root, key):
+#     if root is None:
+#         return root
+#     if key < root.key:
+#         root.left = deleteNode(root.left , key)
+#     elif key > root.key:
+#         root.right = deleteNode(root.right , key)
+#     else:
+#         if root.left is None:
+#             temp = root.right
+#             root = None
+#             return temp
+#         elif root.right is None:
+#             temp = root.left
+#             root = None
+#             return temp
+
+#         temp = minValueNode(root.right)
+#         root.key = temp.key
+#         root.right  = deleteNode(root.right , temp.key)
+
+# root = None
+# root = insert(root, 50)
+# root = insert(root, 30)
+# root = insert(root, 20)
+# root = insert(root, 40)
+# root = insert(root, 70)
+# root = insert(root, 60)
+# root = insert(root, 80)
+# root = insert(root , 90)
+# print(inorder(root))
+# int_min = -9999
+# int_max= 99999
+# def bST(root):
+#     return isBST(root , int_min , int_max)
+# def isBST(root , min , max):
+#     if root is None:
+#         return True
+#     if root.key < min or root.key > max:
+#         return False
+#     tap = isBST(root.left , min , root.key - 1) and isBST(root.right , root.key + 1 , max)
+#     return tap
+# print(bST(root))
+# def findLCA(root  , n1 , n2) :
+#     if root is None : return None
+#     if root.key == n1 or root.key == n2:
+#         return root
+#     leftLCA = findLCA(root.left, n1 , n2)
+#     rightLCA = findLCA(root.right , n1 , n2 )
+#     if leftLCA and rightLCA:
+#         return root
+#     return leftLCA if leftLCA is not None else rightLCA
+# arr = []
+# def toBalance(root , arr):
+#     if root is not None:
+#         toBalance(root.left , arr)
+#         arr.append(root.key)
+#         toBalance(root.right , arr)
+#     return arr
+# def buildtree(arr , start , end):
+#     if start > end:
+#         return None
+#     mid = (start + end) // 2
+#     node = arr[mid]
+#     node.left = buildtree(arr , start , mid - 1)
+#     node.right = buildtree(arr , mid + 1 , end)
+#     return node
+
+# print(toBalance(root , arr))
+# def inorderTra(root , arr):
+#     if root is None:
+#         return
+#     inorderTra(root.left , arr)
+#     arr.append(root.key)
+#     inorderTra(root.right , arr)
+# def buildtree(arr , start , end):
+#     if start > end:
+#         return None
+#     mid = (start + end) // 2
+#     node = arr[mid]
+#     node.left = buildtree(arr , start , mid - 1)
+#     node.right = buildtree(arr , mid + 1 , end)
+#     return node
+
+# def mergeTwo(t1 , t2):
+#     arr1 , arr2 , arr3 = [] , [] , []
+#     inorderTra(t1 , arr1)
+#     inorderTra(t2 , arr2)
+#     arr3 = arr1 + arr2
+#     arr3.sort()
+#     buildtree(arr3 , 0 , len(arr3) - 1)
+# Problem Number 225
+# def kthLargest(root , k , c):
+#     if root is None or c[0] >= k:
+#         return
+#     kthLargest(root.right , k , c)
+#     c[0] += 1
+# #     if c[0] == k:
+# #         return root.data
+# #     kthLargest(root.left , k , c)
+
+# # def kthSmallest(root , k):
+# #     arr =  []
+# #     inorderTra(root , arr)
+# #     return arr[k -1]
+
+# # print(kthSmallest(root , 3))
+# # def findNode(root , k):
+# #     if root is None:
+# #         return False
+
+# #     if root.key == k:
+# #         return True
+
+# #     res = findNode(root.left , k)
+# #     if res :
+# #         return True
+# #     res2 = findNode(root.right , k)
+# #     return res2
+
+# # print(findNode(root , 15))
+# def inorderTra(root , arr):
+#     if root is None:
+#         return
+#     inorderTra(root.left , arr)
+#     arr.append(root.key)
+#     inorderTra(root.right , arr)
+# def countNode(root):
+#     c = 1
+#     if root is None:
+#         return 0
+#     c += countNode(root.left)
+#     c += countNode(root.right)
+#     return c
+# def getNode(root):
+#     arr = []
+#     k = countNode(root)
+#     inorderTra(root , arr)
+#     if k % 2 == 0:
+#         return (arr[k // 2] + arr[k // 2 - 1] ) / 2
+#     return arr[k // 2]
+
+# print(getNode(root))
+
+# def nodeLie(root , l , h ):
+#     if root is None:
+#         return 0
+#     if root.key >= l and root.key <= h:
+#         return 1 + nodeLie(root.left , l , h ) + nodeLie(root.right , l , h)
+#     if root.key < l:
+#         return nodeLie(root.right , l , h)
+#     else:
+#         return nodeLie(root.left , l , h)
+
+# print(nodeLie(root , 20 , 70))
+# def insert(root , k):
+#     global succ
+#     if root is None:
+#         return Node(k)
+#     if root.data < k:
+#         root.right = insert(root.right , k)
+#     else:
+#         succ = root
+#         root.left = insert(root.left , k)
+#     return root
+# root = None
+# root = insert(root , 20)
+# root = insert(root , 30)
+# root = insert(root ,50 )
+# root = insert(root , 60)
+# root = insert(root , 40)
+# print(inorder(root))
+# def arrtoBST(arr , n):
+#     global succ
+#     for i in range(n -1 , -1 , -1):
+#         succ = None
+#         root = insert(root , arr[i])
+
+#         if succ:
+#             arr[i] = succ.data
+#         else:
+#             arr[i] = -1
+#     return arr
+
 # # # # # # #### Problem - Line Number 238
 # # # def maximumMeetings(n,start,end):
 # # #     arr = list()
@@ -1661,30 +1861,132 @@ def CheckBST(root):
 #                 arr.append(a[i])
 #                 i += 1
 #             else:
-#                 i += 1    
+#                 i += 1
 #         elif a[i]  > b[j]:
 #             if b[j] not in arr:
 #                 arr.append(b[j])
 #                 j += 1
 #             else:
-#                 j += 1    
+#                 j += 1
 
 #     while i < n:
 #         if a[i] not in arr:
 #             arr.append(a[i])
 #             i += 1
 #         else:
-#             i += 1    
+#             i += 1
 #     while j < m:
 #         if b[j]  not in arr:
 #             arr.append(b[j])
-#             j += 1  
+#             j += 1
 #         else:
-#             j += 1    
+#             j += 1
 
-#     return arr   
+#     return arr
 
 
 # a = [2, 2, 3, 4, 5]
 # b = [1, 1, 2, 3, 4]
 # print(mergeArray(a , b , 5 , 5))
+# Problem 242
+# def FractionalKnapsack(W, value, weight, n):
+#     count = 0
+#     arr = [0]*n
+#     for i in range(n):
+#         arr[i] = ([value[i] / weight[i] , weight[i] , i])
+#     arr.sort(reverse=True)
+#     j = 0
+#     while W != 0 and j < n:
+#         if arr[j][1] <= W:
+#             count += arr[j][0] * arr[j][1]
+# #             W -= arr[j][1]
+# #             j += 1
+# #         else:
+# #             count += W * arr[j][0]
+# #             W = 0
+# #             j += 1
+
+# #     return count
+
+# # value = [60,100,120]
+# # weight = [10,20,30]
+# # print(FractionalKnapsack(50 ,value , weight , 3 ))
+# ## Problem 243
+# # def CoinPiles(n , arr , k):
+# #     arr.sort()
+# #     sumcoin = 0
+# #     extraCoin = 0
+# #     for i in range(n):
+# #         for j in range(i + 1 , n):
+# #             if arr[j] - arr[i] > k:
+# #                 sumcoin += arr[i]
+
+# #     for i in range(1 , n ):
+# #         if arr[i] - arr[0] > k:
+# #             extraCoin += arr[i] - k - arr[0]
+
+# #     if sumcoin < extraCoin:
+# #         return sumcoin
+# #     else:
+# #         return extraCoin
+
+# # a = [1 , 1 , 1 , 1 , 12]
+# # print(CoinPiles (5 , a , 9))
+# ### Problem Number 245
+# def minimumPlatform(n,arr,dep):
+#     '''
+#     :param n: number of activities
+#     :param arr: arrival time of trains
+#     :param dep: corresponding departure time of trains
+#     :return: Integer, minimum number of platforms needed
+#     '''
+#     # code here
+#     arr.sort()
+#     dep.sort()
+#     plat = 1
+#     result = 1
+#     i = 1
+#     j = 0
+#     while i < n and j < n:
+#         if arr[i] <= dep[j]:
+#             plat += 1
+#             i += 1
+#         elif arr[i] > dep[j]:
+#             plat -= 1
+#             j += 1
+#         if plat > result:
+#             result = plat
+
+#     return result
+# Problem Number
+# def BuyStock(n, arr, k):
+#     new_arr = []
+#     for i in range(n):
+#         new_arr.append([arr[i], i + 1])
+#     new_arr.sort()
+#     p = 0
+#     for j in range(n):
+#         p += min(new_arr[j][1], k // new_arr[j][0])
+#         k -= arr[j] * min(new_arr[j][1], k // new_arr[j][0])
+#     return p
+
+
+# a = [7,10,14]
+# print(BuyStock(3 , a , 100))
+# Problem Number
+# def  foodNeed(S , N , M):
+#     if ((N*6 < M*7) and S > 6 ) or M > N:
+#         return False
+#     else:
+#         day = (S*M) // N
+#     if (S*M) % N != 0:
+#         day += 1
+#         print(day)
+# print(foodNeed(10 , 16 , 2))
+# def meeting(arr1 , arr2):
+#     arr3 = []
+#     for i in range(len(arr1)):
+#         arr3.append([arr2[i] , arr1[i] , i])
+#     arr3.sort(reverse=True)
+#     temp = at
+#     for i in range(len(arr3)):
