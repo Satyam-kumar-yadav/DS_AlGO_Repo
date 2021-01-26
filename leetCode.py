@@ -12,12 +12,19 @@
 # print(Median(a , b))
 #### Problem Number 10
 ### Problem Number 316
-def removeDuplicates(s):
-    arr = []
-    for i in range(len(s)):
-        arr.append([ord(s[i]) - 97 , i])
-    arr.sort()    
+# def removeDuplicates(s):
+#     arr = []
+#     for i in range(len(s)):
+#         arr.append([ord(s[i]) - 97 , i])
+#     arr.sort()    
 
-    return arr
+#     return arr
 
-print(removeDuplicates("bbcabc"))
+# print(removeDuplicates("bbcabc"))
+# import functools
+# def compare(s1,s2):
+#     return -1 if int(s1 + s2) > int(s2 + s1) else 0
+# num = [str(item) for item in nums]    
+# num = sorted(num , key=functools.cmp_to_key(compare) , reverse=True)
+# ans = "0" if num[0] == "0" else "".join(num)
+# return ans
