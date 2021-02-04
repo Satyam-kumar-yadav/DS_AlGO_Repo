@@ -214,3 +214,25 @@
 #     return temp1 * temp2
 
 # print(Findnumber(n))
+### 1459 A
+def check(str1,str2):
+    c1=0
+    c2=0
+    for i in range(len(str1)):
+        if int(str1[i]) > int(str2[i]):
+            c1 += 1
+        elif int(str1[i]) < int(str2[i]): 
+            c2 += 1    
+        else:
+            c1 += 1
+            c2 += 1    
+    if c1 > c2:
+        print("RED")
+    elif c1 < c2:
+        print("BLUE")        
+    else:
+        print("EQUAL")   
+
+s1="777"
+s2="111"
+check(s1,s2)

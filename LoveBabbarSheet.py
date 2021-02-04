@@ -2110,6 +2110,13 @@
 # # # bb = [4, 1, 2]
 # # # print(cutBoard(aa , bb , 5 , 3))
 # # ### Backtracking
+### Problem Number - 275
+
+
+
+
+
+
 # # ### Stack
 # # ## Problem - 302
 # # # def revese(s):
@@ -2494,7 +2501,7 @@
 #             if Directed(k,visited,rstack,graph) == True:
 #                 return True
 #         return False                             
-##### cyce in undirected 
+##### cycle in undirected 
 # def isutil(v,visited,graph,parent):
 #     visited[v] = True,
 #     for i in range(graph[v]):
@@ -2504,6 +2511,26 @@
 #         elif parent != v:
 #             return True
 #     return False
+### cycle in udirected graph
+# def union(parent,i,j):
+#     x_set = find(parent,i)
+#     y_set = find(parent,j)
+#     parent[x_set] = y_set
+
+# def find(parent,i):
+#     if parent[i] == -1:
+#         return i
+#     if parent[i] != -1:
+#         return find(parent,parent[i])    
+# def detectCycle(root,graph,V):
+#     parent = [-1]*V
+#     for i in graph:
+#         for j in graph[i]:
+#             x = find(parent,i)
+#             y = find(parent,j)
+#             if x == y:
+#                 return True
+#             union(parent,x,y)    
 ### Problem 362
 # class cell:
 #     def __init__(self,x,y,dis=0):
@@ -2516,65 +2543,177 @@
 #     return False    
 # def steps(KnightPos,TargetPos,N):
 #     dx = [2,2,-2,-2,-1,-1,1,1]
-#     dy=[2,2,-2,-2,-1,-1,1,1]
+#     dy=[-1,1,-1,1,2,-2,2,-2]
 #     queue = []
-#     queue.append(cell(KnightPos[0],KnightPos[1],0))
+#     queue.append([KnightPos[0],KnightPos[1],0])
 #     visited = [[False for j in range(N+1)] for i in range(N+1) ]
 #     visited[KnightPos[0]][KnightPos[1]]=True
 #     while len(queue) > 0:
 #         t = queue[0]
 #         queue.pop(0)
-#     if t.x == TargetPos[0] and t.y== TargetPos[1]:
-#         return t.dist
+#     if t[0] == TargetPos[0] and t[1]== TargetPos[1]:
+#         return t[2]
 #     for i in range(8):
-#         x = t.x + dx[i]
-#         y = t.y + dy[i]  
+#         x = t[0] + dx[i]
+#         y = t[1] + dy[i]  
 #         if isInside(x,y,N) and visited[x][y] == False:
 #             visited[x][y] = True
-#             queue.append(cell(x,y,t.dis+1)) 
-# if __name__ == '__main__':        
-#     N = 30
-#     knightpos = [2, 1] 
-#     targetpos = [30, 30] 
-#     print(steps(knightpos, targetpos, N)) 
-# class cell:
-#     def __init__(self,x,y,dis=0):
-#         self.x = x
-#         self.y = y
-#         self.dis = 0
-def isInside(x,y,image):
-    if (x >= 0 or x <= len(image[0])) or (y >= 0 or y <= len(image)) and image[x][y] == 1:
-        return True
-    return False   
-def nowMain(sr,sc,image,newColor):
-    dx = [1,0,-1,0]
-    dy = [0,1,0,-1]
-    visited = [[False for i in range(len(image[0]))] for j in range(len(image))]                      
-    queue = []
-    queue.append([sr,sc])
-    visited[sr][sc] = True
-    image[sr][sc] = newColor
-    while queue:
-        tx = queue[0][0]
-        ty = queue[0][1]
-        image[tx][ty] = newColor
-
-        queue.pop(0)
-        for i in range(4):
-            x = tx + dx[i]
-            y = ty + dy[i]
-            if isInside(x,y,image) and visited == False:
-                queue.append([x,y])
-                visited[x][y] = True
-    return image
-
-image = [[1,1,1],[1,1,0],[1,0,1]]
-newColor = 2
-print(nowMain(0,0,image,newColor))                
+#             queue.append([x,y,t[2]+1])         
 
 
+# knightpos = [1, 1] 
+# targetpos = [4, 5] 
+# print(steps(knightpos, targetpos, 6)) 
+# # # class cell:
+# #     def __init__(self,x,y,dis=0):
+# #         self.x = x
+# #         self.y = y
+# #         self.dis = 0
+# def isInside(x,y,image,temp):
+#     if (x >= 0 and x < len(image)) and (y >= 0 and y < len(image[0])) and image[x][y] == temp:
+#         return True
+#     return False   
+# def nowMain(sr,sc,image,newColor):
+#     temp = image[sr][sc]
+#     dx = [1,0,-1,0]
+#     dy = [0,1,0,-1]
+#     visited = [[False for i in range(len(image[0]))] for j in range(len(image))]                      
+#     queue = []
+#     queue.append([sr,sc])
+#     visited[sr][sc] = True
+#     image[sr][sc] = newColor
+#     while queue:
+#         tx = queue[0][0]
+#         ty = queue[0][1]
+#         image[tx][ty] = newColor
+
+#         queue.pop(0)
+#         for i in range(4):
+#             x = tx + dx[i]
+#             y = ty + dy[i]
+#             if isInside(x,y,image,temp) and visited[x][y] == False:
+#                 queue.append([x,y])
+#                 visited[x][y] = True
+#     return image
+
+# #image = [[1,1,1],[1,1,0],[1,0,1]]
+# image = [[0,0,0],[0,0,0]]
+# newColor = 2
+# print(nowMain(0,0,image,newColor)) 
 
 
+### Problem 365
+# def find(par,i):
+#     if par[i] == -1:
+#         return i
+#     elif par[i] != -1:
+#         return find(par,par[i])
+# def makeConnection(n,connections):
+#     par = [-1]*n
+#     count = n
+#     for i,j in connections:
+#         x_set = find(par,i)
+#         y_set = find(par,j)            
+# #         if x_set != y_set:
+# #             par[x_set] = y_set
+# #             count -= 1
 
+# #     return -1 if len(connections) < n -1 else count - 1      
+# # n = 6
+# # connections = [[0,1],[0,2],[0,3],[1,2],[1,3]]
+# # print(makeConnection(n,connections))  
+# ### problem 366
+# from collections import deque
+# def preprocess(self,wordList):
+#     dic = {}
+#     for word in wordList:
+#         for c in range(len(word)):
+#             words= word[:c] + "*" + word[c+1:]
+#             if words not in dic:
+#                 dic[words] = []
+#             dic[words].append(word)
+#     return dic            
+# def ladderlength(beginWord,endWord,wordList):
+#     if endWord not in wordList or len(wordList) == 0:
+#         return 0
+#     preprocessed = self.preprocess(wordList)    
+#     queue = deque()
+#     queue.append([beginWord,1])
+#     visited = set()
+#     while queue:
+#         curr,lvl= queue.popleft()
+#         for c in range(len(curr)):
+#             words = curr[:c] + "*" + curr[c+1:]
+#             if words in preprocessed:
+#                 for j in preprocessed[words]:
+#                     if j == endWord:
+#                         return lvl + 1
+#                     if j not in visited:
+#                         visited.add(j)
+#                         queue.append([j,lvl+1])    
+#     return 0           
+# Dijsktra Algo
+# import sys
+# def minValue(dis,visited,V):
+#     min = sys.maxint
+#     for v in range(V):
+#         if dis[v] < min and visited[v] == False:
+#             min = dis[v]
+#             min_index = v
+#     return min_index        
+# def dijsktra(src,V):
+#     dist = [sys.maxint]*V
+#     dist[src] = 0              
+#     sptSet = [False]*V
+### Dijsktra
+# import heapq
+# from collections import defaultdict
+# def dijsktra(graph,src,dist):
+#     h = []
+#     heapq.heappush(h,(0,src))
+#     while h :
+#         currentWeight,curr = heapq.heappop(h)
+#         if curr == dist:
+#             return currentWeight
+#         else:
+#             for i,j in graph[curr]:
+#                 heapq.heappush(h,(currentWeight+i , j))
 
-                
+#### topological Sort
+# def topological(visited,start,graph):
+#     stack = []
+#     if start not in visited:
+#         visited.add(start)
+#         for i in graph[start] :
+#             topological(visited,i,graph)
+#         stack.append(start)    
+#     return stack
+
+# graph = {"A":["B","C"],
+# "B":["D","E"],
+# "C":["B","K"]}
+# visited = set()
+# print(topological(visited,"A",graph))
+
+    
+### Problem 413
+# def factorial(n):
+#     dp = [1]*(n+1)
+#     for i in range(1,n+1):
+#         dp[i] = i*dp[i-1]
+#     return dp[n]    
+# def permutation(n,r):
+#     return int(factorial(n) / factorial(n-r))
+# print(permutation(10,2))    
+### Problem 414
+def catlan(n):
+    if n == 0 or n == 1:
+        return 1
+    dp = [0]*(n+1)    
+    dp[0] =1
+    dp[1] = 1
+    for i in range(2,n+1):
+        for j in range(i):
+            dp[i] += dp[j]*dp[i-j-1]    
+    return dp[n]
+print(catlan(2))            
