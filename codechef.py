@@ -1,6 +1,6 @@
-### CodeChef jan long
-### Div 3
-### Problem 1
+# CodeChef jan long
+# Div 3
+# Problem 1
 # def contest(arr , N , K , D):
 #     sum = 0
 #     temp = 0
@@ -12,51 +12,172 @@
 #     else:
 #         temp = sum // D
 
-#     return temp       
+#     return temp
 
-# n = 2 
-# m = 5 
+# n = 2
+# m = 5
 # d = 7
 # arr = [20,  36 ]
 # print(contest(arr , n , m , d))
-import math 
-def isPrime(n): 
-	if(n <= 1): 
-		return False
-	if(n <= 3): 
-		return True
-	
-	if(n % 2 == 0 or n % 3 == 0): 
-		return False
-	
-	for i in range(5,int(math.sqrt(n) + 1), 6): 
-		if(n % i == 0 or n % (i + 2) == 0): 
-			return False
-	return True
+# import math
+# def isPrime(n):
+# 	if(n <= 1):
+# 		return False
+# 	if(n <= 3):
+# 		return True
 
-def final(n):
-    count = 0
-    i = 3
-    while i <= n:
-        if isPrime(i):
-            if isPrime(i + 2) and i + 2 < n:
-                count += 1
-        i += 2
-    return count    
-print(final(14))
+# 	if(n % 2 == 0 or n % 3 == 0):
+# 		return False
 
+# 	for i in range(5,int(math.sqrt(n) + 1), 6):
+# 		if(n % i == 0 or n % (i + 2) == 0):
+# 			return False
+# 	return True
 
-# def solve(n):
-#     sieve = [True] * (n + 1)
-#     primes = []
-#     for i in range(2, n + 1):
-#         if sieve[i]:
-#             primes.append(i)
-#             for j in range(i, n + 1, i):
-#                sieve[j] = False
+# def final(n):
 #     count = 0
-#     for i in range(len(primes)):
-#             if (primes[i] + 2) in  primes:
-#                 count += 1      
+#     i = 3
+# #     while i <= n:
+# #         if isPrime(i):
+# #             if isPrime(i + 2) and i + 2 < n:
+# #                 count += 1
+# #         i += 2
+# #     return count
+# # print(final(14))
+
+
+# # def solve(n):
+# #     sieve = [True] * (n + 1)
+# #     primes = []
+# #     for i in range(2, n + 1):
+# #         if sieve[i]:
+# #             primes.append(i)
+# # #             for j in range(i, n + 1, i):
+# # # #                sieve[j] = False
+# # # #     count = 0
+# # # #     for i in range(len(primes)):
+# # # #             if (primes[i] + 2) in  primes:
+# # # #                 count += 1
+# # # #     return count
+# # # # print(solve(10))
+# # # feb Long Challenge
+# # # def max(N):
+# # # 	i = 10
+# # # 	while N % i != 0:
+# # # 		i -=1
+# # # 	return i
+# # # print(max(24))
+# # # def maxSum(arr):
+# # # 	arr.sort()
+# # # 	x = arr[0]
+# # # 	z = arr[-1]
+# # # 	y = arr[len(arr) // 2]
+# # # 	return abs(x-y) + abs(x-z) + abs(y-z)
+# def check(string):
+#     if string.split(" ")[-1] == 'AM':
+#         x = string.split(":")[0]
+#         if x == "12":
+#             x = '00'
+#     else:
+#         x = int(string.split(":")[0])
+#         if x < 12:
+#             x = int(string.split(":")[0]) + 12
+#     return str(x) + string[2:-3]
+# from datetime import datetime
+# def time(str1, str2, str3):
+#     str1 = check(str1)
+#     str1 = datetime(2000,12,5,hour = int(str1.split(":")[0]),minute=int(str1.split(":")[1]))    
+#     str2 = check(str2)
+#     str2 = datetime(2000,12,5,hour = int(str2.split(":")[0]),minute=int(str2.split(":")[1]))    
+#     str3 = check(str3)
+#     str3 = datetime(2000,12,5,hour = int(str3.split(":")[0]),minute=int(str3.split(":")[1]))
+
+#     if str1 >= str2 and str1 <= str3:
+#         return 1
+#     return 0    
+    # if (int(str1.split(":")[0]) >= int(str2.split(":")[0])):
+    #     if (int(str1.split(":")[1]) >= int(str2.split(":")[1])):
+    #         if (int(str1.split(":")[0]) <= int(str3.split(":")[0])):
+    #             if (int(str1.split(":")[1]) <= int(str3.split(":")[1])):
+    #                 return 1
+    # return 0
+# print(time("12:01 AM","11:59 AM","11:59 PM"))
+
+# t = int(input())
+# for _ in range(t):
+#     n = input()
+#     m = int(input())
+#     result = ''
+# #     for k in range(m):
+# #         str1 , x , str2 , y = map(str,input().split(" "))
+# #         str1 = str1 + " " + x
+# #         str2 = str2 + " " + y
+# #         print(str1,str2)
+
+# #         result += str(time(str(n),str1,str2))
+# # print(result)
+# # string = "AB C  DEFH"
+# # print(string.split( ))
+# # def greedy(n, weight, value):
+# #     arr = []
+# #     count = 0
+# #     for i in range(n):
+# #         arr.append([weight[i], value[i], i])
+# #     for i in range(1, n):
+# #         if arr[i][2] < arr[i-1][2]:
+# #             while arr[i][2] <= arr[i-1][2]:
+# #                 arr[i][2] += arr[i][1]
+# #                 count += 1
+# #     return count
+
+# def greedy(n, weight, value):
+#     dict = {}
+#     count = 0
+#     for i in range(n):
+#         dict[weight[i]] = [value[i],i]
+#     for k in range(2,n+1):
+#         if dict[k][1] < dict[k-1][1]:
+#             while dict[k][1] <= dict[k-1][1]:
+#                 dict[k][1] += dict[k][0]
+#                 count += 1
 #     return count
-# print(solve(10))        
+# # weight = [3, 1, 2]
+# # value = [1, 4, 5]
+# weight = [1,2,2]
+# value = [5,6,7]
+# # weight = [3,2,1]
+# # value = [1,1,1]
+# print(greedy(2, weight, value))
+
+# def checkFirst(str1,str2):
+#     if str1[0] == str2[0]:
+#         return True
+#     return False
+
+# def last(str1,str2):
+#     if str1[1:] == str2[1:]:
+#         return True
+#     return False
+# def solution(arr,n):
+#     arr1 = []
+#     count = 0
+#     for i in range(n-1):
+#         for j in range(i+1,n):
+#             if not checkFirst(arr[i] ,arr[j]):
+#                 if not last(arr[i],arr[j]):
+#                     arr1.append([arr[i],arr[j]])
+#     for k in range(len(arr1)):
+#         x = arr1[k][1][0] + arr1[k][0][1:]
+#         y = arr1[k][0][0] + arr1[k][1][1:]
+#         if x not in arr and y not in arr:
+#             count += 1
+#     return count*2
+
+# arr = ['hell','bell',"best",'test']
+# print(solution(arr,4))
+
+# arr = [["str1","str2"] , ["bore1","bore2"]]
+# print(arr[0][1][0] + arr[1][1][1:])
+def anyoneWin(x,y):
+    #### Number with y prime factor
+    

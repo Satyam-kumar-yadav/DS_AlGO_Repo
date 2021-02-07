@@ -2706,14 +2706,58 @@
 #     return int(factorial(n) / factorial(n-r))
 # print(permutation(10,2))    
 ### Problem 414
-def catlan(n):
-    if n == 0 or n == 1:
-        return 1
-    dp = [0]*(n+1)    
-    dp[0] =1
-    dp[1] = 1
-    for i in range(2,n+1):
-        for j in range(i):
-            dp[i] += dp[j]*dp[i-j-1]    
-    return dp[n]
-print(catlan(2))            
+# def catlan(n):
+#     if n == 0 or n == 1:
+#         return 1
+#     dp = [0]*(n+1)    
+#     dp[0] =1
+#     dp[1] = 1
+#     for i in range(2,n+1):
+#         for j in range(i):
+#             dp[i] += dp[j]*dp[i-j-1]    
+#     return dp[n]
+# print(catlan(2))            
+### 416
+# def edit(str1,str2,n,m):
+#     if n == 0:
+#         return m
+#     if m == 0:
+#         return n
+#     if str1[n-1] == str2[m-1]:
+#         return edit(str1,str2,n-1,m-1)        
+#     return 1 + min(edit(str1,str2,n-1,m-1),edit(str1,str2,n-1,m),edit(str1,str2,n,m-1))    
+# print(edit('sunday','saturday',6,8))
+# def edit(str1,str2,n,m):
+#     dp = [[0 for i in range(n+1)] for j in range(m+1)]
+#     for i in range(n+1):
+#         for j in range(m+1):
+#             if i == 0:
+#                 dp[i][j] = j
+#             if j == 0:
+#                 dp[i][j] = i
+#             elif str1[i-1] == str2[j-1]:
+#                 dp[i][j] = dp[i-1][j-1]
+#             else:
+#                 dp[i][j] = 1 + min(dp[i-1][j-1],dp[i-1][j],dp[i][j-1])
+#     return dp[n][m]
+# print(edit('sunday','saturday',6,8)) 
+### 417
+def findSum(arr,n):
+    sum = 0
+    for i in range(n):
+        sum += arr[i]
+    if sum % 2 != 0:
+        return False
+    return Partition(arr,n,sum//2)    
+
+
+def Partition(arr,n,sum):
+    if sum == 0:
+        return True
+    if n == 0 or sum != 0:
+        return False    
+    if arr[n-1] > sum:
+        return Partition(arr,n-1,sum)    
+    return Partition(arr,n-1,sum-arr[n-1]) or Partition(arr,n-1,sum)   
+    
+pr    
