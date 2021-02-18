@@ -178,6 +178,18 @@
 
 # arr = [["str1","str2"] , ["bore1","bore2"]]
 # print(arr[0][1][0] + arr[1][1][1:])
-def anyoneWin(x,y):
-    #### Number with y prime factor
-    
+# ### Number with y prime factor
+
+# def factorail(n):
+#     dp = [1]*(n+1)
+#     for i in range(1,n+1):
+#         dp[i] = i*dp[i -1]
+#     return dp[n]
+# def anyoneWin(x,y):
+#     if factorail(x) % 6 == 0:
+#         return 1
+#     return 0    
+def divyam(x,y):
+    if x <= y:
+        return 0
+    return 1    

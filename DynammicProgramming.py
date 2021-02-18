@@ -84,16 +84,53 @@
 #         dp[i] = i*dp[i -1]
 #     return dp[n]    
 
-# def nCr(n,r):
-#     if n < r:
-#         return 0
-#     elif n == r:
+# def nCr(n):     
+#     return int(factorail(n) / (factorail(n-2)*2))
+
+# print(nCr(3) +1)
+### Friends Pairing Problem
+# def findPair(n):
+#     if n <= 1:
 #         return 1
-#     else:        
-#         return int(factorail(n) / (factorail(n-r)*factorail(r))) % (10**9 + 7) 
-print(nCr(5,1))
+#     return findPair(n-1) + (n-1)*findPair(n-2)   
+# print(findPair(3))
+# def findPair(n):
+#     # dp = [0 for i in range(n+1)]
+#     # dp[0] = 1
+#     # dp[1] = 1
+#     # for i in range(2,n+1):
+#     #     dp[i] = dp[i-1] + (i-1)*dp[i-2] 
+#     # return dp[n]
+# print(findPair(4))        
+
+### 419
+### GoldMineProblem
+# def GoldMineProblem(mat,n,m):
+#     dp = [[0 for i in range(m+1)] for j in range(n+1)]
+#     for i in range(1,n+1):
+#         dp[i][m] = mat[i-1][m-1] 
+#     for i in range(m-1,0,-1):    
+#         for j in range(1,n+1):
+#             if j == n:
+#                 dp[j][i] = mat[j-1][i-1] +  max(dp[j-1][i+1],dp[j][i+1])
+#             else:    
+#                 dp[j][i] = mat[j-1][i-1] + max(dp[j-1][i+1],dp[j][i+1],dp[j+1][i+1])    
+#     max_val = 0            
+#     for i in range(n+1):
+#         for j in range(m +1):
+#             if dp[i][j] > max_val:
+#                 max_val = dp[i][j]
+#     return max_val
 
 
+# mat =  [[1, 3, 1, 5],
+#         [2, 2, 4, 1],
+#         [5, 0, 2, 3],
+#         [0, 6, 1, 2]];
+mat = [[10, 33, 13, 15],
+                  [22, 21, 4, 1],
+                  [5, 0, 2, 3],
+                  [0, 6, 14, 2]];
+print(GoldMineProblem(mat,4,4))     
 
 
-        

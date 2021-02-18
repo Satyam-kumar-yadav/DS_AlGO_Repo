@@ -2716,7 +2716,11 @@
 #         for j in range(i):
 #             dp[i] += dp[j]*dp[i-j-1]    
 #     return dp[n]
-# print(catlan(2))            
+# print(catlan(2))   
+#### 415
+# def matrixChain(arr,n,product):
+#     for n == 1:
+#         return 
 ### 416
 # def edit(str1,str2,n,m):
 #     if n == 0:
@@ -2742,22 +2746,193 @@
 #     return dp[n][m]
 # print(edit('sunday','saturday',6,8)) 
 ### 417
-def findSum(arr,n):
-    sum = 0
+# def findSum(arr,n):
+#     sum = 0
+#     for i in range(n):
+#         sum += arr[i]
+#     if sum % 2 != 0:
+#         return False
+#     return Partition(arr,n,sum//2)    
+
+
+# def Partition(arr,n,sum):
+#     if sum == 0:
+#         return True
+#     if n == 0 or sum != 0:
+#         return False    
+#     if arr[n-1] > sum:
+#         return Partition(arr,n-1,sum)    
+#     return Partition(arr,n-1,sum-arr[n-1]) or Partition(arr,n-1,sum)   
+### 
+# def findSub(arr,n,sum):
+#     # dp = [[True for i in range(sum+1)] for i in range(n+1)]
+#     # for i in range(1 , sum+1):
+#     #     dp[0][i] = False
+#     # for i in range(1,n+1):
+#     #     for j in range(1,sum+1):
+#     #         dp[i][j] = dp[i-1][j]
+#     #         if arr[i-1]  <= j:
+#     #             dp[i][j] = dp[i][j] or dp[i-1][sum - arr[i-1]]
+#     # return dp   
+# def findSub(nums,n,w):
+#     dp = [[True for x in range(w + 1)] for y in range(n + 1)]
+#     for i in range(1,w+1):
+#         dp[0][i] = False
+#     for i in range(1, n + 1):
+#         for j in range(1, w + 1):
+#             if nums[i - 1] <= j:
+#                 dp[i][j] = dp[i - 1][j - nums[i - 1]] or dp[i - 1][j]
+#             else:
+#                 dp[i][j] = dp[i - 1][j]
+#     return dp[n][w]   
+# arr = [2,4,5,5,1]
+# print(findSub(arr,5,1))
+        
+
+
+# def subArray(arr,n):
+#     sum = 0
+#     i,j = 0,0
+#     for i in range(n):
+#         sum += arr[i]
+
+#     if sum % 2 != 0:
+#         return False
+#     dp = [[True for i in range(n + 1)] for j in range(sum // 2 + 1)]
+#     for i in range(1,sum // 2 +1):
+#         dp[i][0] = False
+#     for i in range(1,sum//2 +1):
+#         for j in range(1,n+1):
+#             dp[i][j] = dp[i][j-1]
+#             if i >= arr[i-1]:
+#                 dp[i][j] = dp[i-arr[i-1]][j-1] or dp[i][j]
+
+#     return dp[sum // 2][n]      
+## 421
+# def painting(n,k):
+### 422
+# def cutBoard(n,x,y,z):
+#     dp = [-1]*(n+1)
+#     dp[0] = 0
+#     for i in range(n+1):
+#         if dp[i] == -1:
+#             continue
+#         if i + x <= n:
+#             dp[i+x] = (max(dp[i+x] ,dp[i] +1))
+#         if i + y <= n:
+#             dp[i+y] = (max(dp[i+y] ,dp[i] +1))
+#         if i + z <= n:
+#             dp[i+z] = (max(dp[i+z] ,dp[i] +1))
+#     if dp[n] == -1:
+#         dp[n] = 0    
+#     return dp[n]
+# print(cutBoard(7,5,3,2))            
+### 423
+# def Lcs(A,B,str1,str2):
+#     if A == 0 or B == 0:
+#         return 0
+#     if str1[A-1] == str2[B-1]:
+#         return 1 + max(Lcs(A-1 , B-1 , str1,str2) , Lcs(A-1 , B , str1,str2),Lcs(A,B-1,str1,str2))  
+#     return max(Lcs(A-1 , B-1 , str1,str2) , Lcs(A-1 , B , str1,str2),Lcs(A,B-1,str1,str2))        
+# print(Lcs(6,6,"ABCDGH","AEDFHR"))
+### 
+# def Lcs(A,B,str1,str2):
+#     dp = [[0]*(B+1)for j in range(A+1)]
+#     for i in range(A+1):
+#         for j in range(B+1):
+#             if i == 0 or j == 0:
+#                 dp[i][j] = 0
+#             if str1[i-1] == str2[j-1]:
+#                 dp[i][j] = 1 + dp[i-1][j-1] 
+#             else:
+#                 dp[i][j] = max(dp[i-1][j] ,dp[i][j-1] )
+#     return dp[A][B]
+
+# print(Lcs(6,6,"ABCDGH","AEDFHR"))
+### 424
+# def Lrs(str1,A):
+#     dp = [[0]*(A+1) for j in range(A +1)]
+#     for i in range(1,A+1):
+#         for j in range(1,A+1):
+#             if  str1[i-1] == str1[j-1] and i -1 != j -1:
+#                 dp[i][j] = 1 + dp[i-1][j-1]
+#             else:
+#                 dp[i][j] = max(dp[i-1][j],dp[i][j-1])
+#     return dp[A][A]
+# print(Lrs("aab",3))
+                
+# def LIS(arr,n):
+#     max_val = 1
+#     dp = [1]*n
+#     for i in range(1,n):
+#         for j in range(0,i):
+#             if arr[j] < arr[i] and dp[i] < dp[j] + 1:
+#                 dp[i] = dp[j] + 1
+#     for i in range(n):
+#         if dp[i] > max_val :
+#             max_val = dp[i]
+#     return max_val
+
+
+# arr = [0,8,4,12,2,10,6,14,1,9,5 ,13,3,11,7,15]
+# print(LIS(arr,16))
+### 427 
+# def lcsthree(x,y,z,n,m,o):
+#     dp = [[[0 for i in range(o+1)] for j in range(m +1)] for k in range(n+1)]
+#     for i in range(1,o+1):
+#         for j in range(1,m+1):
+#             for k in range(1,n+1):
+#                 if x[k-1] == y[j-1] and y[j-1] ==  z[i-1]:
+#                     dp[k][j][i] = 1+ dp[k-1][j-1][i-1]
+#                 else:
+#                     dp[k][j][i] = max(dp[k-1][j][i],dp[k][j-1][i],dp[k][j][i-1])
+#     return dp[n][m][o]
+
+# print(lcsthree("geeks","geeksfor","geeksforgeeks",5,8,13))
+### 428
+# def maxSubseq(arr,N):
+#     max_value = 0
+#     dp = [0 for i in range(N)]
+#     dp[0] = arr[0]
+#     for i in range(1,N):
+#         dp[i] = arr[i]
+#         for j in range(0,i):
+#             if arr[i] > arr[j] and dp[i] < arr[i] + dp[j]:
+#                 dp[i] = dp[j] + arr[i]
+#     for i in range(N):
+#         if dp[i] > max_value:
+#             max_value = dp[i]
+#     return max_value
+# arr = [20,8,27,37,9,12,46]
+# print(maxSubseq(arr,7))
+# ### 429
+# def prodsubCount(arr,k,n):
+#     dp = [[0 for i in range(n+1)] for j in range(k+1)]
+#     for i in range(1,k+1):
+#         for j in range(1,n+1):
+#             dp[i][j] = dp[i][j-1]
+
+### 430
+def findLongestConseqSubseq(n,arr):
+    dp = [1 for i in range(n)]
+    for i in range(1,n):
+        for j in range(0,i):
+            if abs(arr[i] - arr[j]) == 1 and dp[i] < dp[j] + 1:
+                dp[i] = 1 + dp[j]
+    max_val = 0
     for i in range(n):
-        sum += arr[i]
-    if sum % 2 != 0:
-        return False
-    return Partition(arr,n,sum//2)    
+        if max_val < dp[i]:
+            max_val = arr[i]
+    return max_val
+        
+# arr = [10, 9, 4, 5, 4, 8, 6]
+arr = []
+print(findLongestConseqSubseq(5,arr))
 
 
-def Partition(arr,n,sum):
-    if sum == 0:
-        return True
-    if n == 0 or sum != 0:
-        return False    
-    if arr[n-1] > sum:
-        return Partition(arr,n-1,sum)    
-    return Partition(arr,n-1,sum-arr[n-1]) or Partition(arr,n-1,sum)   
-    
-pr    
+
+
+
+
+
+

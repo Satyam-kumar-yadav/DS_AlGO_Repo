@@ -215,24 +215,109 @@
 
 # print(Findnumber(n))
 ### 1459 A
-def check(str1,str2):
-    c1=0
-    c2=0
-    for i in range(len(str1)):
-        if int(str1[i]) > int(str2[i]):
-            c1 += 1
-        elif int(str1[i]) < int(str2[i]): 
-            c2 += 1    
-        else:
-            c1 += 1
-            c2 += 1    
-    if c1 > c2:
-        print("RED")
-    elif c1 < c2:
-        print("BLUE")        
-    else:
-        print("EQUAL")   
+# def check(str1,str2):
+#     c1=0
+#     c2=0
+#     for i in range(len(str1)):
+#         if int(str1[i]) > int(str2[i]):
+#             c1 += 1
+#         elif int(str1[i]) < int(str2[i]): 
+#             c2 += 1    
+#         else:
+#             c1 += 1
+#             c2 += 1    
+#     if c1 > c2:
+#         print("RED")
+#     elif c1 < c2:
+#         print("BLUE")        
+#     else:
+#         print("EQUAL")   
 
-s1="777"
-s2="111"
-check(s1,s2)
+# s1="777"
+# s2="111"
+# check(s1,s2)
+# import math
+# def addDivide(a,b):
+#     ans = a +3
+#     if a < b :
+#         return 1
+#     elif a == b:
+#         return 2
+    
+#     else:
+#         for i in range(0 if b >= 2 else 2 - b  , math.ceil(math.sqrt(a))):
+#             l = a
+#             count = i
+#             while (l != 0):
+#                 count +=  1
+#                 l = l // (i +b)
+
+#             if count < ans:ans = count     
+#     return ans
+        
+
+# print(addDivide(2,1))
+# def DenseArray(n,arr):
+#     count = 0
+#     for i in range(n-1):
+#         x = max(arr[i],arr[i+1])
+#         y = min(arr[i],arr[i+1])
+#         if x / y > 2:
+#             print(x,y)
+#             while y * 2 < x:
+#                 y *= 2
+#                 count += 1
+
+#     return count
+# # arr = [1,2,3,4,5]
+# arr = [4, 31, 25, 50, 30, 20, 34, 46, 42, 16, 15, 16]
+# # arr = [1,4,2]
+# print(DenseArray(12,arr))
+# print(42//16)
+    
+# def balaced(arr,n):
+#     c0,c1,c2 = 0,0,0
+#     for i in range(n):
+#         arr[i] %= 3
+#         if arr[i] == 0:
+#             c0 += 1
+#         elif arr[i] == 1:
+#             c1 += 1
+#         else:
+#             c2 += 1
+#     k = n // 3
+#     count = 0
+#     for i in range(2):
+#         if c0 > k:
+#             count += c0-k
+#             c1  += c0-k
+#             c0 = k
+#         if c1 > k:
+#             count += c1-k
+#             c2  += c1-k
+#             c1 = k
+#         if c2> k:
+#             count += c2-k
+#             c0  += c2-k
+#             c2 = k
+#     return count
+# arr =  [7,1,3 ,4, 2, 10, 3 ,9, 6]
+# arr = [2,0,2,1,0,0]
+# arr = [0,2,5,5,4,8]
+# arr = [0,1,2,3,4,5]
+# print(balaced(arr,6))
+# ### 702 C
+# arr = set()
+# for i in range(1,10001):
+#     arr.add(i**3)
+# def cube(arr,n):
+#     end = int((n)**(1/3))
+#     for i in range(1,end+1):
+#         b = n - i**3
+#         if b in arr:
+#             return True
+#     return False
+        
+# # print(cube(2))
+# print(cube(arr,5))
+### 
