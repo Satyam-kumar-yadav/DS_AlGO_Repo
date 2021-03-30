@@ -83,6 +83,9 @@
 # #     for i in range(len(a)):
 # #         print(a[i])
 
+# problem 20
+# def nextpermutation(arr,n):
+
 
 # # Quick Sort
 # # def quick_sort(arr):
@@ -749,8 +752,122 @@
 # # s = "aabcbcdbca"
 # # print(smallestDistinct(s))
 # # Problem 88
+# def longpalindrom(string):
+#  ans = ''
+#  maxlen = 0
+  # n = len(string)
+  # dp = [[False]*(n) for i in range(n)]
+  # for i in range(n):
+  #  dp[i][i]  =  True
+  #  ans = string[i]
+  #  maxlen = 1
+  # for i in range(n-2):
+  #  if string[i] == string[i+1]:
+  #    dp[i][i+1] = True
+  #    ans = string[i:i+2]
+  #    maxlen =2
+  # for j in range(n):
+  #  for i in range(0,j-1):
+  #    if string[i] == string[j] and dp[i+1][j-1]:
+  #      dp[i][j] = True
+  #      if maxlen < j- i +1:
+  #        ans  = string[i:j+1]
+  #        maxlen = j-i +1
+  # return ans
+
+# print(longpalindrom("babad"))
 
 
+# palindromic substring
+# def countPalindrom(string):
+#  count = 0
+#  n = len(string)
+#  dp = [[False]*(n) for i in range(n)]
+#  for i in range(n):
+#    dp[i][i]  =  True
+#    count += 1
+#  for i in range(n-1):
+#    if string[i] == string[i+1]:
+#      dp[i][i+1] = True
+#      count += 1
+#  for j in range(n):
+#    for i in range(0,j-1):
+#      if string[i] == string[j] and dp[i+1][j-1]:
+#        dp[i][j] = True
+#        count += 1
+#  return count
+# palindromic subsequnces
+#def countPalindrom(string):
+#  N = len(string)
+#  dp = [[0]*(N+2) for _ in range(N+2)]
+#  for i in range(N):
+#    dp[i][i] = 1
+#  for L in range(2, N + 1):
+#    for i in range(N):
+#      k = L + i - 1
+#      if (k < N):
+#        if (string[i] == string[k]):
+#          dp[i][k] = (dp[i][k - 1] + dp[i + 1][k] + 1)
+#        else:
+#          dp[i][k] = (dp[i][k - 1] + dp[i + 1][k] -
+#                                 dp[i + 1][k - 1])
+#  return dp[0][N - 1]
+#def string_match(str1,str2):
+#  arr = []
+#  n = len(str1)
+#  m = len(str2)
+#  for i in range(n-m+1):
+#    if str1[i:i+m] == str2:
+#      arr.append(i) 
+#  return arr 
+##print(string_match("AABAACAADAABAABA","AABA"))
+##print(string_match("THIS IS A TEST TEXT","TEST"))
+##print(string_match("ABCA","A"))
+### 88
+from collections import defaultdict
+def smallestDistinct(s):
+  m = defaultdict(lambda : 0 )
+  count = 0
+  start = 0
+  x= set()
+  output = 0
+  for i in range(len(s)):
+    x.add(s[i])
+  n=len(x)
+  for i in range(len(s)):
+    m[s[i]] +=1
+    if m[s[i]] == 1:
+      count +=1
+    if count == n:
+      while m[s[start]] >= 2:
+        m[s[start]]  -= 1
+        start +=1 
+
+    output = i - start +1
+  return output
+
+import argparse
+if __name__ == "__main__":
+  arg = argparse.ArgumentParser()
+  arg.add_argument("--num1" , help="first number")
+  arg.add_argument("--num2" , help="Second number")
+  arg.add_argument("--operation" , help="Define Operation")
+  args = arg.parse_args()
+  n1 = int(args.num1)
+  n2 = int(args.num2)
+
+  if  args.operation == "add":
+    print(n1 + n2)
+  elif  args.operation == "mul":
+    print(n1 * n2)
+  else:
+    print(n1 // n2)
+
+
+#print(smallestDistinct("aaab"))
+# problem 98
+# def iterString(arr):
+#  for 
 # # ######## Problem - Line Number 101
 # # # def occurnce(arr , n , m):
 # # #     arr1 = list()
@@ -2110,11 +2227,7 @@
 # # # bb = [4, 1, 2]
 # # # print(cutBoard(aa , bb , 5 , 3))
 # # ### Backtracking
-### Problem Number - 275
-
-
-
-
+# Problem Number - 275
 
 
 # # ### Stack
@@ -2429,38 +2542,36 @@
 # #         return b
 # #     if b == None:
 # #         return a
-        
+
 # #     if a.data <= b.data:
 # #             result = a
 # #             result.next = sortlist(a.next,b)
 # #     else:
 # #         result = b
 # #         result.next = sortlist(a,b.next)
-# #     return result        
+# #     return result
 # def KsortedLinkedLis(arr,N):
 
 
-    
-
 # arr = [[1, 2, 3], [4, 5, 6]]
 # print(KsortedLinkedLis(arr))
-### Problem 348
+# Problem 348
 # def countNode(root):
 #     if root is None:
 #         return 0
-#     return 1 + countNode(root.left) + countNode(root.right)     
+#     return 1 + countNode(root.left) + countNode(root.right)
 
 # def isBinary(root):
 #     if root.left is None and root.right is None:
 #         return True
 #     if root.right is None:
-#         return root.data >= root.left.data    
+#         return root.data >= root.left.data
 #     else:
 #         if root.data >= root.left.data and root.data >= root.right.data:
 #             return isBinary(root.left) and isBinary(root.right)
 #         else:
 #             return False
-### Problem Number - 357
+# Problem Number - 357
 # def bfs(graph,root):
 #     visited = []
 #     queue = []
@@ -2473,17 +2584,17 @@
 #             if i not in visited:
 #                 visited.append(i)
 #                 queue.append(i)
-### 359
+# 359
 
 # def dfs(graph,root,visited):
 #     if root not in visited:
 #         visited.append(root)
 #     for k in graph[root]:
-#         dfs(graph,k,visited)   
-# visited = dfs()        
-# print(visited)         
+#         dfs(graph,k,visited)
+# visited = dfs()
+# print(visited)
 
-### cycle in Directed graph - 359
+# cycle in Directed graph - 359
 # def Directed(v,visited,rstack,graph):
 #     visited[v] = True
 #     rstack[v] = True
@@ -2500,8 +2611,8 @@
 #         if visited[k] == False:
 #             if Directed(k,visited,rstack,graph) == True:
 #                 return True
-#         return False                             
-##### cycle in undirected 
+#         return False
+# cycle in undirected
 # def isutil(v,visited,graph,parent):
 #     visited[v] = True,
 #     for i in range(graph[v]):
@@ -2511,7 +2622,7 @@
 #         elif parent != v:
 #             return True
 #     return False
-### cycle in udirected graph
+# cycle in udirected graph
 # def union(parent,i,j):
 #     x_set = find(parent,i)
 #     y_set = find(parent,j)
@@ -2521,7 +2632,7 @@
 #     if parent[i] == -1:
 #         return i
 #     if parent[i] != -1:
-#         return find(parent,parent[i])    
+#         return find(parent,parent[i])
 # def detectCycle(root,graph,V):
 #     parent = [-1]*V
 #     for i in graph:
@@ -2530,8 +2641,8 @@
 #             y = find(parent,j)
 #             if x == y:
 #                 return True
-#             union(parent,x,y)    
-### Problem 362
+#             union(parent,x,y)
+# Problem 362
 # class cell:
 #     def __init__(self,x,y,dis=0):
 #         self.x = x
@@ -2540,7 +2651,7 @@
 # def isInside(x,y,N):
 #     if (x >= 1 and x <= N) and (y >= 1 and y <= N):
 #         return True
-#     return False    
+#     return False
 # def steps(KnightPos,TargetPos,N):
 #     dx = [2,2,-2,-2,-1,-1,1,1]
 #     dy=[-1,1,-1,1,2,-2,2,-2]
@@ -2555,15 +2666,15 @@
 #         return t[2]
 #     for i in range(8):
 #         x = t[0] + dx[i]
-#         y = t[1] + dy[i]  
+#         y = t[1] + dy[i]
 #         if isInside(x,y,N) and visited[x][y] == False:
 #             visited[x][y] = True
-#             queue.append([x,y,t[2]+1])         
+#             queue.append([x,y,t[2]+1])
 
 
-# knightpos = [1, 1] 
-# targetpos = [4, 5] 
-# print(steps(knightpos, targetpos, 6)) 
+# knightpos = [1, 1]
+# targetpos = [4, 5]
+# print(steps(knightpos, targetpos, 6))
 # # # class cell:
 # #     def __init__(self,x,y,dis=0):
 # #         self.x = x
@@ -2572,12 +2683,12 @@
 # def isInside(x,y,image,temp):
 #     if (x >= 0 and x < len(image)) and (y >= 0 and y < len(image[0])) and image[x][y] == temp:
 #         return True
-#     return False   
+#     return False
 # def nowMain(sr,sc,image,newColor):
 #     temp = image[sr][sc]
 #     dx = [1,0,-1,0]
 #     dy = [0,1,0,-1]
-#     visited = [[False for i in range(len(image[0]))] for j in range(len(image))]                      
+#     visited = [[False for i in range(len(image[0]))] for j in range(len(image))]
 #     queue = []
 #     queue.append([sr,sc])
 #     visited[sr][sc] = True
@@ -2599,10 +2710,10 @@
 # #image = [[1,1,1],[1,1,0],[1,0,1]]
 # image = [[0,0,0],[0,0,0]]
 # newColor = 2
-# print(nowMain(0,0,image,newColor)) 
+# print(nowMain(0,0,image,newColor))
 
 
-### Problem 365
+# Problem 365
 # def find(par,i):
 #     if par[i] == -1:
 #         return i
@@ -2613,15 +2724,15 @@
 #     count = n
 #     for i,j in connections:
 #         x_set = find(par,i)
-#         y_set = find(par,j)            
+#         y_set = find(par,j)
 # #         if x_set != y_set:
 # #             par[x_set] = y_set
 # #             count -= 1
 
-# #     return -1 if len(connections) < n -1 else count - 1      
+# #     return -1 if len(connections) < n -1 else count - 1
 # # n = 6
 # # connections = [[0,1],[0,2],[0,3],[1,2],[1,3]]
-# # print(makeConnection(n,connections))  
+# # print(makeConnection(n,connections))
 # ### problem 366
 # from collections import deque
 # def preprocess(self,wordList):
@@ -2632,11 +2743,11 @@
 #             if words not in dic:
 #                 dic[words] = []
 #             dic[words].append(word)
-#     return dic            
+#     return dic
 # def ladderlength(beginWord,endWord,wordList):
 #     if endWord not in wordList or len(wordList) == 0:
 #         return 0
-#     preprocessed = self.preprocess(wordList)    
+#     preprocessed = self.preprocess(wordList)
 #     queue = deque()
 #     queue.append([beginWord,1])
 #     visited = set()
@@ -2650,8 +2761,8 @@
 #                         return lvl + 1
 #                     if j not in visited:
 #                         visited.add(j)
-#                         queue.append([j,lvl+1])    
-#     return 0           
+#                         queue.append([j,lvl+1])
+#     return 0
 # Dijsktra Algo
 # import sys
 # def minValue(dis,visited,V):
@@ -2660,12 +2771,12 @@
 #         if dis[v] < min and visited[v] == False:
 #             min = dis[v]
 #             min_index = v
-#     return min_index        
+#     return min_index
 # def dijsktra(src,V):
 #     dist = [sys.maxint]*V
-#     dist[src] = 0              
+#     dist[src] = 0
 #     sptSet = [False]*V
-### Dijsktra
+# Dijsktra
 # import heapq
 # from collections import defaultdict
 # def dijsktra(graph,src,dist):
@@ -2679,14 +2790,14 @@
 #             for i,j in graph[curr]:
 #                 heapq.heappush(h,(currentWeight+i , j))
 
-#### topological Sort
+# topological Sort
 # def topological(visited,start,graph):
 #     stack = []
 #     if start not in visited:
 #         visited.add(start)
 #         for i in graph[start] :
 #             topological(visited,i,graph)
-#         stack.append(start)    
+#         stack.append(start)
 #     return stack
 
 # graph = {"A":["B","C"],
@@ -2695,41 +2806,41 @@
 # visited = set()
 # print(topological(visited,"A",graph))
 
-    
-### Problem 413
+
+# Problem 413
 # def factorial(n):
 #     dp = [1]*(n+1)
 #     for i in range(1,n+1):
 #         dp[i] = i*dp[i-1]
-#     return dp[n]    
+#     return dp[n]
 # def permutation(n,r):
 #     return int(factorial(n) / factorial(n-r))
-# print(permutation(10,2))    
-### Problem 414
+# print(permutation(10,2))
+# Problem 414
 # def catlan(n):
 #     if n == 0 or n == 1:
 #         return 1
-#     dp = [0]*(n+1)    
+#     dp = [0]*(n+1)
 #     dp[0] =1
 #     dp[1] = 1
 #     for i in range(2,n+1):
 #         for j in range(i):
-#             dp[i] += dp[j]*dp[i-j-1]    
+#             dp[i] += dp[j]*dp[i-j-1]
 #     return dp[n]
-# print(catlan(2))   
-#### 415
+# print(catlan(2))
+# 415
 # def matrixChain(arr,n,product):
 #     for n == 1:
-#         return 
-### 416
+#         return
+# 416
 # def edit(str1,str2,n,m):
 #     if n == 0:
 #         return m
 #     if m == 0:
 #         return n
 #     if str1[n-1] == str2[m-1]:
-#         return edit(str1,str2,n-1,m-1)        
-#     return 1 + min(edit(str1,str2,n-1,m-1),edit(str1,str2,n-1,m),edit(str1,str2,n,m-1))    
+#         return edit(str1,str2,n-1,m-1)
+#     return 1 + min(edit(str1,str2,n-1,m-1),edit(str1,str2,n-1,m),edit(str1,str2,n,m-1))
 # print(edit('sunday','saturday',6,8))
 # def edit(str1,str2,n,m):
 #     dp = [[0 for i in range(n+1)] for j in range(m+1)]
@@ -2744,26 +2855,26 @@
 #             else:
 #                 dp[i][j] = 1 + min(dp[i-1][j-1],dp[i-1][j],dp[i][j-1])
 #     return dp[n][m]
-# print(edit('sunday','saturday',6,8)) 
-### 417
+# print(edit('sunday','saturday',6,8))
+# 417
 # def findSum(arr,n):
 #     sum = 0
 #     for i in range(n):
 #         sum += arr[i]
 #     if sum % 2 != 0:
 #         return False
-#     return Partition(arr,n,sum//2)    
+#     return Partition(arr,n,sum//2)
 
 
 # def Partition(arr,n,sum):
 #     if sum == 0:
 #         return True
 #     if n == 0 or sum != 0:
-#         return False    
+#         return False
 #     if arr[n-1] > sum:
-#         return Partition(arr,n-1,sum)    
-#     return Partition(arr,n-1,sum-arr[n-1]) or Partition(arr,n-1,sum)   
-### 
+#         return Partition(arr,n-1,sum)
+#     return Partition(arr,n-1,sum-arr[n-1]) or Partition(arr,n-1,sum)
+###
 # def findSub(arr,n,sum):
 #     # dp = [[True for i in range(sum+1)] for i in range(n+1)]
 #     # for i in range(1 , sum+1):
@@ -2773,7 +2884,7 @@
 #     #         dp[i][j] = dp[i-1][j]
 #     #         if arr[i-1]  <= j:
 #     #             dp[i][j] = dp[i][j] or dp[i-1][sum - arr[i-1]]
-#     # return dp   
+#     # return dp
 # def findSub(nums,n,w):
 #     dp = [[True for x in range(w + 1)] for y in range(n + 1)]
 #     for i in range(1,w+1):
@@ -2784,10 +2895,9 @@
 #                 dp[i][j] = dp[i - 1][j - nums[i - 1]] or dp[i - 1][j]
 #             else:
 #                 dp[i][j] = dp[i - 1][j]
-#     return dp[n][w]   
+#     return dp[n][w]
 # arr = [2,4,5,5,1]
 # print(findSub(arr,5,1))
-        
 
 
 # def subArray(arr,n):
@@ -2807,10 +2917,10 @@
 #             if i >= arr[i-1]:
 #                 dp[i][j] = dp[i-arr[i-1]][j-1] or dp[i][j]
 
-#     return dp[sum // 2][n]      
-## 421
+#     return dp[sum // 2][n]
+# 421
 # def painting(n,k):
-### 422
+# 422
 # def cutBoard(n,x,y,z):
 #     dp = [-1]*(n+1)
 #     dp[0] = 0
@@ -2824,18 +2934,18 @@
 #         if i + z <= n:
 #             dp[i+z] = (max(dp[i+z] ,dp[i] +1))
 #     if dp[n] == -1:
-#         dp[n] = 0    
+#         dp[n] = 0
 #     return dp[n]
-# print(cutBoard(7,5,3,2))            
-### 423
+# print(cutBoard(7,5,3,2))
+# 423
 # def Lcs(A,B,str1,str2):
 #     if A == 0 or B == 0:
 #         return 0
 #     if str1[A-1] == str2[B-1]:
-#         return 1 + max(Lcs(A-1 , B-1 , str1,str2) , Lcs(A-1 , B , str1,str2),Lcs(A,B-1,str1,str2))  
-#     return max(Lcs(A-1 , B-1 , str1,str2) , Lcs(A-1 , B , str1,str2),Lcs(A,B-1,str1,str2))        
+#         return 1 + max(Lcs(A-1 , B-1 , str1,str2) , Lcs(A-1 , B , str1,str2),Lcs(A,B-1,str1,str2))
+#     return max(Lcs(A-1 , B-1 , str1,str2) , Lcs(A-1 , B , str1,str2),Lcs(A,B-1,str1,str2))
 # print(Lcs(6,6,"ABCDGH","AEDFHR"))
-### 
+###
 # def Lcs(A,B,str1,str2):
 #     dp = [[0]*(B+1)for j in range(A+1)]
 #     for i in range(A+1):
@@ -2843,13 +2953,13 @@
 #             if i == 0 or j == 0:
 #                 dp[i][j] = 0
 #             if str1[i-1] == str2[j-1]:
-#                 dp[i][j] = 1 + dp[i-1][j-1] 
+#                 dp[i][j] = 1 + dp[i-1][j-1]
 #             else:
 #                 dp[i][j] = max(dp[i-1][j] ,dp[i][j-1] )
 #     return dp[A][B]
 
 # print(Lcs(6,6,"ABCDGH","AEDFHR"))
-### 424
+# 424
 # def Lrs(str1,A):
 #     dp = [[0]*(A+1) for j in range(A +1)]
 #     for i in range(1,A+1):
@@ -2860,7 +2970,7 @@
 #                 dp[i][j] = max(dp[i-1][j],dp[i][j-1])
 #     return dp[A][A]
 # print(Lrs("aab",3))
-                
+
 # def LIS(arr,n):
 #     max_val = 1
 #     dp = [1]*n
@@ -2876,7 +2986,7 @@
 
 # arr = [0,8,4,12,2,10,6,14,1,9,5 ,13,3,11,7,15]
 # print(LIS(arr,16))
-### 427 
+# 427
 # def lcsthree(x,y,z,n,m,o):
 #     dp = [[[0 for i in range(o+1)] for j in range(m +1)] for k in range(n+1)]
 #     for i in range(1,o+1):
@@ -2889,7 +2999,7 @@
 #     return dp[n][m][o]
 
 # print(lcsthree("geeks","geeksfor","geeksforgeeks",5,8,13))
-### 428
+# 428
 # def maxSubseq(arr,N):
 #     max_value = 0
 #     dp = [0 for i in range(N)]
@@ -2912,27 +3022,261 @@
 #         for j in range(1,n+1):
 #             dp[i][j] = dp[i][j-1]
 
-### 430
-def findLongestConseqSubseq(n,arr):
-    dp = [1 for i in range(n)]
-    for i in range(1,n):
-        for j in range(0,i):
-            if abs(arr[i] - arr[j]) == 1 and dp[i] < dp[j] + 1:
-                dp[i] = 1 + dp[j]
-    max_val = 0
-    for i in range(n):
-        if max_val < dp[i]:
-            max_val = arr[i]
-    return max_val
+# 430
+# def findLongestConseqSubseq(n,arr):
+#     dp = [1 for i in range(n)]
+#     for i in range(1,n):
+#         for j in range(0,i):
+#             if abs(arr[i] - arr[j]) == 1 and dp[i] < dp[j] + 1:
+#                 dp[i] = 1 + dp[j]
+#     max_val = 0
+#     for i in range(n):
+#         if max_val < dp[i]:
+#             max_val = arr[i]
+#     return max_val
+
+# # arr = [10, 9, 4, 5, 4, 8, 6]
+# arr = []
+# print(findLongestConseqSubseq(5,arr))
+# max sum such that no two element are adjacent
+# def two_sum(arr,n):
+#     dp = [0 for i in range(n)]
+#     if n==1:
+#         return arr[1]
+#     elif n == 2:
+#         return arr[2]
+#     dp[0] = arr[0]
+#     dp[1] = arr[1]
+#     dp[2] = arr[2] + arr[0]
+#     for i in range(3,n):
+#         dp[i] = arr[i] + max(dp[i-2],dp[i-3])
+#     max_val = 0
+#     for i in dp:
+#         if max_val < i:
+#             max_val = i
+#     return max_val
+# # arr = [1,20,3]
+# arr = [5, 5, 10, 100, 10, 5]
+# print(two_sum(arr,6))
+# 431
+# def maxSubseq(arr,n):
+#     dp = [0]*n
+#     dp[0] = arr[0]
+#     dp[1] =  arr[0] + arr[1]
+#     dp[2] = max(dp[1],arr[1]+arr[2],arr[0]+arr[2])
+#     for i in range(3,n):
+#         dp[i] = max(dp[i-1],arr[i] + dp[i-2] , arr[i] + arr[i-1] + dp[i-3])
+#     return dp
+# arr = [3000, 2000, 1000, 3, 10]
+# print(maxSubseq(arr,5))
+# 432
+# def max_len_chain(arr,n):
+#     arr.sort()
+#     dp = [1 for i in range(n)]
+#     for i in range(1,n):
+#         for j in range(0,i):
+#             if arr[i][0] > arr[j][1] and dp[i] < dp[j] + 1:
+#                 dp[i] = dp[j] + 1
+#     return dp
+# arr = [[5,24],[39,60],[15,28],[27,40],[50,90]]
+# print(max_len_chain(arr,5))
+# 434
+# def check(arr,m):
+#     for i in arr:
+#         if i != 1:
+#             return False
+#     return True
+
+# def largestsquare(arr,n,m):
+#     arr1 = [0]*n
+#     for i in range(n):
+#         if check(arr[i],m):
+#             arr1[i] = 1
+#         else:
+#             arr1[i] = 0
+#     max_count = 0
+#     count = 0
+#     for i in arr1:
+#         if i == 1:
+#             count += 1
+#         else:
+#             count = 0
+#         if count > max_count:
+#             max_count = count
+#     return max_count
+# def largestsquare(arr,n,m):
+
+
+# # arr = [[1,1],[1,1]]
+# arr =  [[0,1,0,1,0,1],
+#         [1 0 1 0 1 0],
+#         [0 1 1 1 1 0],
+#          0 0 1 1 1 0,
+#          1 1 1 1 1 1]
+# print(largestsquare(arr,2,2))
+# 435
+# def specific(arr,n,k):
+#         i = n-1
+#         arr.sort()
+#         sum1 = 0
+#         while i > 0:
+#                 if (arr[i] - arr[i-1]) < k:
+#                         sum1 += arr[i] + arr[i-1]
+#                         i -= 1
+#                 i -= 1
+#         return sum1
+
+# arr = [3, 5, 10, 15, 17, 12, 9]
+# print(specific(arr,7,4))
+# 436
+# import numpy 
+# def threeWays(matix, n):
+#    dp = [[0]*n for i in range(n)]
+    
+#    for i in range(n):
+#        dp[n-1][i] = matix[n-1][i]
+#    for i in range(n-2,-1,-1):
+#        for j in range(n):
+#            if j == 0:
+#                dp[i][j] = max(dp[i+1][j],dp[i+1][j+1]) + matix[i][j]
+#            elif j == n-1:
+#                dp[i][j] = max(dp[i+1][j],dp[i+1][j-1]) + matix[i][j]
+#            else:
+#                dp[i][j] = max(dp[i+1][j],dp[i+1][j-1],dp[i+1][j+1]) + matix[i][j]
+#    return numpy.amax(dp)
         
-# arr = [10, 9, 4, 5, 4, 8, 6]
-arr = []
-print(findLongestConseqSubseq(5,arr))
+# matrix = [[348, 391],
+#          [618, 193]]
+# print(threeWays(matrix, 2))
+# def minPath(matrix,n):
+
+#                 cellSum = matrix[0][i]
+# 437
+# def maxDiff(str):
+#         dp = [[0]*len(str) for i in range(2)]
+#         arr = [1 if i == "1" else -1 for i in str ]
+
+
+# str = "100101"
+# print(maxDiff(str))
+# 440
+# def minRemoval(arr,n,k):
+#    dp = [0]*n
+#    for i in range(n-1):
+#        dp[i] = abs(arr[i+1] - arr[i])
+#    max_count = 0 
+#    count = 0
+#    print(dp)
+#    for i in range(n):
+#        if dp[i] > k:
+#            count = 0
+#        else:
+#            count += 1
+#        if count > max_count:
+#            max_count = count 
+#    return n- max_count -1
+
+
+# arr = [1, 3, 4, 9, 10, 11, 12, 17, 20]
+# arr = [1, 5, 6, 2, 8]
+# print(minRemoval(arr,9,4))
+     
+# def Lcs(A,B,str1,str2):
+#    if A == 0 or B == 0:
+#        return 0
+#    if str1[A-1] == str2[B-1]:
+#        return 1 + max(Lcs(A-1 , B-1 , str1,str2) , Lcs(A-1 , B , str1,str2),Lcs(A,B-1,str1,str2))
+#    return max(Lcs(A-1 , B-1 , str1,str2) , Lcs(A-1 , B , str1,str2),Lcs(A,B-1,str1,str2))
+##
+# def Lcs(A,B,str1,str2):
+#    dp = [[0]*(B+1)for j in range(A+1)]
+#    result = 0
+#    for i in range(1 ,A+1):
+#        for j in range(1,B+1):
+#            if i == 0 or j == 0:
+#                dp[i][j] = 0
+#            if str1[i-1] == str2[j-1]:
+#                dp[i][j] = 1 + dp[i-1][j-1]
+#                result = max(result,dp[i][j])
+#            else:
+#                dp[i][j] = 0
+#    return dp
+# print(Lcs(6,6,"ABCDGH","ACDGHR"))
+# [[1, 0, 1],
+# [0, 2, 0], 
+# [0, 0, 0], 
+# [1, 0, 1]]
+# print(Lcs(3,2,"ABC","AC"))
+# 445
+# import numpy
+# def smallContiguous(arr,n):
+#    if numpy.min(arr) >= 0:
+#        return numpy.min(arr).astype(int)
+#    arr = list(numpy.multiply(-1,arr))
+#    max_sum = 0
+#    oSum = 0
+    
+#    for i in range(n):
+#        oSum += arr[i]
+#        if oSum > max_sum:
+#            max_sum = oSum
+#        if oSum < 0:
+#            oSum = 0
+#    return -1*max_sum
 
 
 
+# arr = [3, -4, 2, -3, -1, 7, -5]
+# arr = [2,6,8,1,4]
+# print(smallContiguous(arr,5))
+# 466
+# def unBound(wt,val,n,W):
+#    dp = [0 for i in range(W+1)]
+#    for i in range(W+1):
+#        for j in range(n):
+#            if wt[j] <= i:
+#                dp[i] = max(dp[i],dp[i-wt[j]] + val[j])
+#    return dp[W]
 
+# W = 100
+# val = [10,30,20]
+# wt = [5,10,15]
+# print(unBound(wt,val,3,W))
+# 467
+# def wordBreak(word,wordList):
+#    dp = [False]*(len(word) + 1)
+#    dp[0] = True
+#    for i in range(1,len(word)+1):
+#        for j  in range(i):
+#            if dp[j] and word[j:i] in wordList:
+#                dp[i] = True
+#                break
+#    return dp[-1]
+# 468
+# def maxpalindom(str1,i,j):
+#    if i == j:
+#        return 1
+#    if str1[i] == str1[j] and i+1 == j:
+#        return 2
 
+#    if str1[i] == str1[j]:
+#        return maxpalindom(str1,i+1,j-1) + 2
+#    return max(maxpalindom(str1,i+1,j),maxpalindom(str1,i,j-1))
 
+# str1 = "GEEKSFORGEEKS"
+# print(maxpalindom(str1,0,len(str1) -1))
+# def maxpalindom(str1):
+# import numpy
+# def getMinDiff(arr, n, k):
+#    arr1 = [i+ k for i in arr]
+#    print(arr1)
+#    arr2 = [i-k if i -k >= 0 else i + k for i in arr]
+#    print(arr2)
+#    if not arr2 or numpy.max(arr2) < numpy.min(arr1):
+#        return numpy.max(arr1) - numpy.min(arr1)
+#    return numpy.max(arr2) - numpy.min(arr1)
 
-
+# arr = [1,5,8,10]
+# arr = [3, 9, 12, 16, 20]
+# arr = [2, 6, 3, 4, 7, 2, 10, 3, 2,1]
+# print(getMinDiff(arr,10,5))

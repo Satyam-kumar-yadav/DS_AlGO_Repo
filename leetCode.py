@@ -39,15 +39,41 @@
 #         return max(Lcs(str1[i+1:],str2[j:]),Lcs(str1[i:],str2[j+1:]))
 # print(Lcs("abc","def"))
 # DP approach
-def longestCommonSubsequence(str1, str2):
-    n = len(str1)
-    m = len(str2)
-    dp = [[None]*(n) for i in range(m)]
-    i,j = 0,0
-    if i == len(str1) or j == len(str2):
-        return 0
-    elif str1[i] == str2[j]:
-        dp[i][j] = 1 + dp[]
-    else:
-        return max(Lcs(str1[i+1:],str2[j:]),Lcs(str1[i:],str2[j+1:]))
+#def longestCommonSubsequence(str1, str2):
+#    n = len(str1)
+#    m = len(str2)
+#    dp = [[None]*(n) for i in range(m)]
+#    i,j = 0,0
+#    if i == len(str1) or j == len(str2):
+#        return 0
+#    elif str1[i] == str2[j]:
+#        dp[i][j] = 1 + dp[]
+#    else:
+#        return max(Lcs(str1[i+1:],str2[j:]),Lcs(str1[i:],str2[j+1:]))
+###
+#def findMin(arr):
+#    M =0
+#    m= 0
+#    f = 0
+#    for i in range(0,len(arr)):
+#        if arr[i] >f :
+#            m += arr[i] 
+#        if arr[i] <= f:
+#            m = arr[i]
+#        f = arr[i]
+#        if m > M:
+#            M = m
+#    return M        
+
+#print(findMin([5,5,6,6,6,9,1,2]))
+
+                
+            
+
+
+
+
+
+
+
 

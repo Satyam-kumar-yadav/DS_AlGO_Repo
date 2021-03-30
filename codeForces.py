@@ -321,3 +321,92 @@
 # # print(cube(2))
 # print(cube(arr,5))
 ### 
+class Node:
+    def __init__(self, data):
+        self.left = None
+        self.right = None
+        self.data = data
+
+    def insert(self , data):
+        if self.data:
+            if data > self.data:
+                if self.right is None:
+                    self.right = Node(data)
+                else:
+                    self.right.insert(data)
+
+            if data < self.data:
+                if self.left is None:
+                    self.left = Node(data)
+                else:
+                    self.left.insert(data)
+
+
+
+# def find_max(arr,r,l):
+#     idx_val = 0
+#     for i in range(l,r):
+#         if  idx_val < arr[i]:
+#             idx_val = i
+#     return idx_val
+
+
+# def permu(arr,n):
+#     idx = find_max(arr,n,0)
+#     root = Node(arr[idx])
+#     if 
+#     root.left = permu(arr,idx,0)
+
+### Problem E
+#def find(arr,n):
+#    result = []
+#    if n == 1:
+#        return 1
+#    for i in range(n):
+#        for j in range(n):
+#            if arr[i] >= arr[j] and i != j:
+#                result.append(i+1)
+#                break
+#    return result
+#arr = [1]
+#result = find(arr,1)
+#print(1 if result (' '.join(str(x) for x in result)))
+# print(result)    
+##https://codeforces.com/contest/1368/problem/B
+#def mult(arr):
+#    prod = 1
+#    for i in arr:
+#        prod *= i
+#    return prod
+#def code(m):
+#    str1 = 'codeforces'
+#    arr = [1]*10
+#    pr = 1
+#    i = 0
+#    if m == 1:
+#        return str1
+#    else:
+#        while pr < m:
+#            if i >= 10:
+#                i = 0
+#            arr[i] += 1
+#            i += 1
+#            pr = mult(arr)
+#    k = ''
+#    for i in range(10):
+#        k += arr[i]*str1[i]
+#    return k
+
+
+#print(code(3))
+            
+
+
+
+
+
+
+    
+
+
+

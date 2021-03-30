@@ -189,7 +189,39 @@
 #     if factorail(x) % 6 == 0:
 #         return 1
 #     return 0    
-def divyam(x,y):
-    if x <= y:
-        return 0
-    return 1    
+#def divyam(x,y):
+#    if x <= y:
+#        return 0
+#    return 1    
+### March long challengw
+#def first(n,h,x,arr):
+#    for i in range(n):
+#        if x + arr[i] >= h:
+#            return True
+#    return False
+
+#n,m,k = map(int,input().split())
+##n = 22 6
+##m = 5
+##k = 3
+#arr = list(map(int,input().strip().split()))
+#print("Yes" if first(n,m,k,arr) else "No")
+
+#def chefFriend(str1):
+#    count = 0
+#    for i in range(len(str1)):
+#        if str1[i] == '1' and i == 0:
+#            count = 1
+#        elif str1[i] == '1':
+#            if str1[i-1] == '0':
+#                count += 1
+
+#    return count 
+#print(chefFriend('101'))
+#print(13^7)
+def collegeLife(n,e,h,a,b,c):
+    x = min(e,h)
+    if e // 2 + h // 3 > n or 
+
+            
+        
