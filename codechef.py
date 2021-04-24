@@ -219,9 +219,43 @@
 #    return count 
 #print(chefFriend('101'))
 #print(13^7)
-def collegeLife(n,e,h,a,b,c):
-    x = min(e,h)
-    if e // 2 + h // 3 > n or 
+#def collegeLife(n,e,h,a,b,c):
+#    x = min(e,h)
+#    if e // 2 + h // 3 > n or
+#  
+#def gcd(a,b):
+#    if (b == 0):
+#         return a
+#    return gcd(b, a%b)
+#t = int(input())
+#for _ in  range(t):
+#    x,y = map(int,input().split())
+#    if gcd(x,y) == 1:
+#        print("Yes")
+#    else:
+#        print("No")
 
-            
+#def remove(a):
+#    c = 0
+#    for i in range(len(a)):
         
+#def find(a):
+#    m = 0
+#    p = [0]*2
+#    for i in range(len(a)):
+#        c= 0
+#        for j in range(len(a)):
+#            c += abs(a[i] - a[j])
+#        if c > m:
+#            m = c
+#            p[0] = m
+#            p[1] = i
+#    del a[p[1]]
+#    mean = sum(a) // len(a)
+#    c = 0
+#    for i in range(len(a)):
+#        c += abs(a[i] - mean)
+#    return c
+
+#arr = [2,4]
+#print(find(arr))

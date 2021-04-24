@@ -265,32 +265,40 @@
 
 
 # # Problem - Line Number 38
-# # def minSwap(arr , n , k):
-# #     a = [0]*n
-# #     count = 0
-# #     for i in range(n):
-# #         if arr[i] <= k:
-# #             a[i] = 1
-# #             count += 1
-# #     if count == 1:
-# #         return 0
-# #     max_res = count
-# #     for i in range(n - count + 1):
-# #         res = 0
-# #         for j in range(i , i + count):
-# #             if a[j] == 0:
-# #                 res += 1
-# #         if max_res > res:
-# #             max_res = res
-# #         print(res)
-# #     return max_res
+# def minSwap(arr , n , k):
+#    m = 0
+#    for i in range(n):
+#        if arr[i] <= k:
+#            m += 1
+#    if m == 1 or m == n:
+#        return 0
+#    t = 0
+#    for j  in range(m):
+#        if arr[j] > k :
+#            t += 1
+#    gt = t
+#    for i in range(1, n-m+1):
+#        if arr[i-1] > k:
+#            t -= 1
+#        if arr[i+m-1] > k:
+#            t += 1
 
-# # #a = [470 , 10 , 28 , 338 , 384 , 0 , 329 , 405 , 70 , 349 , 40  , 472 , 212 , 14,  411 , 151  ,215 , 384 ,368 ,46 ,256 ,  42]
-# # #a  = [263, 349, 318, 277, 282, 301, 250, 104, 164, 278, 442, 400, 130, 271, 305, 52, 472, 346, 24, 185]
-# # #a = [2, 1, 5, 6, 3]
-# # #a = [497, 444, 294, 120]
-# # a = [310, 229, 86, 249]
-# # print(minSwap(a , len(a) , 256))
+#        gt = min(t,gt)
+
+#    return gt
+
+# Problem
+#def dupl(m):
+#    n = len(m)
+#    k = len(m[0])
+#    x = dict()
+#    for j in range(n):
+#        x[m[0][j]] = 1
+#    for j in range(1,n):
+#        for i in range(k):
+#            if m[j][i] in x.keys() and x[]
+
+
 
 # # Problem -  Line Number 39
 # # def PalinArray(arr ,n):
@@ -755,25 +763,25 @@
 # def longpalindrom(string):
 #  ans = ''
 #  maxlen = 0
-  # n = len(string)
-  # dp = [[False]*(n) for i in range(n)]
-  # for i in range(n):
-  #  dp[i][i]  =  True
-  #  ans = string[i]
-  #  maxlen = 1
-  # for i in range(n-2):
-  #  if string[i] == string[i+1]:
-  #    dp[i][i+1] = True
-  #    ans = string[i:i+2]
-  #    maxlen =2
-  # for j in range(n):
-  #  for i in range(0,j-1):
-  #    if string[i] == string[j] and dp[i+1][j-1]:
-  #      dp[i][j] = True
-  #      if maxlen < j- i +1:
-  #        ans  = string[i:j+1]
-  #        maxlen = j-i +1
-  # return ans
+# n = len(string)
+# dp = [[False]*(n) for i in range(n)]
+# for i in range(n):
+#  dp[i][i]  =  True
+#  ans = string[i]
+#  maxlen = 1
+# for i in range(n-2):
+#  if string[i] == string[i+1]:
+#    dp[i][i+1] = True
+#    ans = string[i:i+2]
+#    maxlen =2
+# for j in range(n):
+#  for i in range(0,j-1):
+#    if string[i] == string[j] and dp[i+1][j-1]:
+#      dp[i][j] = True
+#      if maxlen < j- i +1:
+#        ans  = string[i:j+1]
+#        maxlen = j-i +1
+# return ans
 
 # print(longpalindrom("babad"))
 
@@ -797,7 +805,7 @@
 #        count += 1
 #  return count
 # palindromic subsequnces
-#def countPalindrom(string):
+# def countPalindrom(string):
 #  N = len(string)
 #  dp = [[0]*(N+2) for _ in range(N+2)]
 #  for i in range(N):
@@ -812,70 +820,106 @@
 #          dp[i][k] = (dp[i][k - 1] + dp[i + 1][k] -
 #                                 dp[i + 1][k - 1])
 #  return dp[0][N - 1]
-#def string_match(str1,str2):
+# def string_match(str1,str2):
 #  arr = []
 #  n = len(str1)
 #  m = len(str2)
 #  for i in range(n-m+1):
 #    if str1[i:i+m] == str2:
-#      arr.append(i) 
-#  return arr 
-##print(string_match("AABAACAADAABAABA","AABA"))
+#      arr.append(i)
+#  return arr
+# print(string_match("AABAACAADAABAABA","AABA"))
 ##print(string_match("THIS IS A TEST TEXT","TEST"))
-##print(string_match("ABCA","A"))
-### 88
-from collections import defaultdict
-def smallestDistinct(s):
-  m = defaultdict(lambda : 0 )
-  count = 0
-  start = 0
-  x= set()
-  output = 0
-  for i in range(len(s)):
-    x.add(s[i])
-  n=len(x)
-  for i in range(len(s)):
-    m[s[i]] +=1
-    if m[s[i]] == 1:
-      count +=1
-    if count == n:
-      while m[s[start]] >= 2:
-        m[s[start]]  -= 1
-        start +=1 
+# print(string_match("ABCA","A"))
+# 88
+#from collections import defaultdict
+# def smallestDistinct(s):
+#  m = defaultdict(lambda : 0 )
+#  count = 0
+#  start = 0
+#  x= set()
+#  output = 0
+#  for i in range(len(s)):
+#    x.add(s[i])
+#  n=len(x)
+#  for i in range(len(s)):
+#    m[s[i]] +=1
+#    if m[s[i]] == 1:
+#      count +=1
+#    if count == n:
+#      while m[s[start]] >= 2:
+#        m[s[start]]  -= 1
+#        start +=1
 
-    output = i - start +1
-  return output
+#    output = i - start +1
+#  return output
 
-import argparse
-if __name__ == "__main__":
-  arg = argparse.ArgumentParser()
-  arg.add_argument("--num1" , help="first number")
-  arg.add_argument("--num2" , help="Second number")
-  arg.add_argument("--operation" , help="Define Operation")
-  args = arg.parse_args()
-  n1 = int(args.num1)
-  n2 = int(args.num2)
+#import argparse
+# if __name__ == "__main__":
+#  arg = argparse.ArgumentParser()
+#  arg.add_argument("--num1" , help="first number")
+#  arg.add_argument("--num2" , help="Second number")
+#  arg.add_argument("--operation" , help="Define Operation")
+#  args = arg.parse_args()
+#  n1 = int(args.num1)
+#  n2 = int(args.num2)
 
-  if  args.operation == "add":
-    print(n1 + n2)
-  elif  args.operation == "mul":
-    print(n1 * n2)
-  else:
-    print(n1 // n2)
+#  if  args.operation == "add":
+#    print(n1 + n2)
+#  elif  args.operation == "mul":
+#    print(n1 * n2)
+#  else:
+#    print(n1 // n2)
+
+# class grid:
+#    def __init__(self):
+#        self.R = None
+#        self.C = None
+#        self.dir = [[1, 0], [-1, 0], [0, -1], [0, 1],
+#                    [-1, -1], [-1, 1], [1, 1], [1, -1]]
+
+#    def findGrid(self, grid, row, col, word):
+#        if word[0] != grid[row][col]:
+#            return False
+
+#        for x, y in self.dir:
+#            rx = row + x
+#            ry = col + y
+#            flag = True
+#            for k in range(1,len(word)):
+#                if  0 <= rx < self.R and 0 <= ry  < self.C:
+#                    if word[k] == grid[rx][ry]:
+#                        rx += x
+#                        ry += y
+#                    else:
+#                        flag = False
+#                        break
+
+#            if flag:
+#                return True
+#            return False
+
+#    def Pattern(self,grid,word):
+#        self.R = len(grid)
+#        self.C = len(grid[0])
+#        for i in range(self.R):
+#            for j in range(self.C):
+#                if self.findGrid(grid,i,j,word):
+#                    print(i,j)
 
 
-#print(smallestDistinct("aaab"))
+# print(smallestDistinct("aaab"))
 # problem 98
 # def iterString(arr):
-#  for 
-# # ######## Problem - Line Number 101
-# # # def occurnce(arr , n , m):
-# # #     arr1 = list()
-# # #     if m not in arr:
-# # #         print("-1")
-# # #     else:
-# # #         for i in range(n):
-# # #             if arr[i] == m:
+# for
+# Problem - Line Number 101
+# def occurnce(arr , n , m):
+# arr1 = list()
+# if m not in arr:
+# print("-1")
+# else:
+# for i in range(n):
+# if arr[i] == m:
 # # #                 arr1.append(i)
 # # #         print(arr1[0] , arr1[-1])
 
@@ -1078,23 +1122,24 @@ if __name__ == "__main__":
 # # # merge(arr1 , arr2 , 4 , 5)
 # # # print(arr1 + arr2)
 # # ######problem number 115
-# # def subarray(arr , n):
-# #     count = 0
-# #     sum = 0
-# #     old_sum = 0
-# #     x = set()
-# #     for i in range(n):
-# #         x.add(sum)
-# #         old_sum = sum
-# #         sum += arr[i]
-# #         if sum in x:
-# #             count += 1
-# #         if old_sum == sum:
-# #             count += 1
-# #     print(x)
-# #     return count
-# # a = [6,-1,-3,4,-2,2,4,6,-12,-7]
-# # print(subarray(a , 10))
+def subArray(arr,n):
+    a = set()
+    sum1 = 0
+    c = 0
+    for i in  arr:
+        sum1 += i
+        print(sum1)
+        if sum1 in a or sum1 == 0:
+            c += 1
+        a.add(sum1)
+    return c
+arr = [0,0,5,5,0,0]
+print(subArray(arr,6))
+
+#arr = [6,-1,-3,4,-2,2,4,6,-12,-7]
+#print(subArray(arr,10))
+
+
 # # Problem number 116
 # # def prod(arr , n):
 # # left = [0] * n
@@ -3129,10 +3174,10 @@ if __name__ == "__main__":
 # arr = [3, 5, 10, 15, 17, 12, 9]
 # print(specific(arr,7,4))
 # 436
-# import numpy 
+# import numpy
 # def threeWays(matix, n):
 #    dp = [[0]*n for i in range(n)]
-    
+
 #    for i in range(n):
 #        dp[n-1][i] = matix[n-1][i]
 #    for i in range(n-2,-1,-1):
@@ -3144,7 +3189,7 @@ if __name__ == "__main__":
 #            else:
 #                dp[i][j] = max(dp[i+1][j],dp[i+1][j-1],dp[i+1][j+1]) + matix[i][j]
 #    return numpy.amax(dp)
-        
+
 # matrix = [[348, 391],
 #          [618, 193]]
 # print(threeWays(matrix, 2))
@@ -3164,7 +3209,7 @@ if __name__ == "__main__":
 #    dp = [0]*n
 #    for i in range(n-1):
 #        dp[i] = abs(arr[i+1] - arr[i])
-#    max_count = 0 
+#    max_count = 0
 #    count = 0
 #    print(dp)
 #    for i in range(n):
@@ -3173,14 +3218,14 @@ if __name__ == "__main__":
 #        else:
 #            count += 1
 #        if count > max_count:
-#            max_count = count 
+#            max_count = count
 #    return n- max_count -1
 
 
 # arr = [1, 3, 4, 9, 10, 11, 12, 17, 20]
 # arr = [1, 5, 6, 2, 8]
 # print(minRemoval(arr,9,4))
-     
+
 # def Lcs(A,B,str1,str2):
 #    if A == 0 or B == 0:
 #        return 0
@@ -3203,8 +3248,8 @@ if __name__ == "__main__":
 #    return dp
 # print(Lcs(6,6,"ABCDGH","ACDGHR"))
 # [[1, 0, 1],
-# [0, 2, 0], 
-# [0, 0, 0], 
+# [0, 2, 0],
+# [0, 0, 0],
 # [1, 0, 1]]
 # print(Lcs(3,2,"ABC","AC"))
 # 445
@@ -3215,7 +3260,7 @@ if __name__ == "__main__":
 #    arr = list(numpy.multiply(-1,arr))
 #    max_sum = 0
 #    oSum = 0
-    
+
 #    for i in range(n):
 #        oSum += arr[i]
 #        if oSum > max_sum:
@@ -3223,7 +3268,6 @@ if __name__ == "__main__":
 #        if oSum < 0:
 #            oSum = 0
 #    return -1*max_sum
-
 
 
 # arr = [3, -4, 2, -3, -1, 7, -5]

@@ -399,6 +399,10 @@ class Node:
 
 
 #print(code(3))
+
+####
+#def alex_train(a):
+
             
 
 
